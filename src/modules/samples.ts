@@ -23,7 +23,7 @@ export const SAMPLE_SHEET: MedItem[] = [
 export const SAMPLE_BOXES: MedItem[] = [
   { raw: "必理痛 500mg", name: "必理痛", strength: "500mg", source: "box" },
   { raw: "Amlodipine 5mg", name: "Amlodipine", strength: "5mg", source: "box" },
-  { raw: "ASPIRIN TAB 80MG", name: "ASPIRIN TAB 80MG", strength: "80mg", source: "box" },
+  { raw: "ASPIRIN TAB 80MG / 阿士匹靈", name: "ASPIRIN TAB 80MG", strength: "80mg", source: "box" },
   { raw: "Metformin 500mg", name: "Metformin", strength: "500mg", source: "box" },
   { raw: "神秘補品丸", name: "神秘補品丸", source: "box" },
   { raw: "必理痛 500mg", name: "必理痛", strength: "500mg", source: "box" },

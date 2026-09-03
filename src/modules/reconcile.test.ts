@@ -2,6 +2,8 @@ import { describe, test, expect } from "@jest/globals";
 import { reconcile, groupsByBucket } from "./reconcile";
 import type { MedItem } from "./types";
 import { SAMPLE_SHEET, SAMPLE_BOXES } from "./samples";
+import { sampleSheetCapture, sampleBoxCapture } from "./capture";
+import { mockVisionProvider } from "./extract";
 
 const sheet = (name: string, strength?: string): MedItem => ({ raw: name, name, strength, source: "sheet" });
 const box = (name: string, strength?: string): MedItem => ({ raw: name, name, strength, source: "box" });
@@ -79,6 +81,21 @@ describe("reconcile — full 陳伯 sample scenario", () => {
   const r = reconcile(SAMPLE_SHEET, SAMPLE_BOXES);
   const byIngredient = (ai: string) => r.groups.find((g) => g.activeIngredient === ai)!;
 
+  test("SAMPLE PATH LOCK: sheet has exactly 4 rows and never includes aspirin", () => {
+    expect(SAMPLE_SHEET).toHaveLength(4);
+    const blob = SAMPLE_SHEET.map((i) => `${i.name} ${i.raw}`).join(" ").toLowerCase();
+    expect(blob.includes("aspirin")).toBe(false);
+    expect(blob.includes("阿司匹林")).toBe(false);
+    expect(blob.includes("阿士匹靈")).toBe(false);
+  });
+
+  test("SAMPLE PATH LOCK: drawer has two 必理痛 + ASPIRIN TAB 80MG + unknown", () => {
+    const names = SAMPLE_BOXES.map((b) => b.name);
+    expect(names.filter((n) => n === "必理痛")).toHaveLength(2);
+    expect(names).toContain("ASPIRIN TAB 80MG");
+    expect(names).toContain("神秘補品丸");
+  });
+
   test("paracetamol: continue + duplicateInDrawer", () => {
     const g = byIngredient("paracetamol");
     expect(g.bucket).toBe("continue");
@@ -110,6 +127,24 @@ describe("reconcile — full 陳伯 sample scenario", () => {
     const un = groupsByBucket(r, "unmatched");
     expect(un).toHaveLength(1);
     expect(un[0].displayName).toBe("神秘補品丸");
+  });
+
+  test("sample-mode pipeline (mock extract S1→S2) yields the same buckets", async () => {
+    const sheet = await mockVisionProvider.extract(sampleSheetCapture());
+    const boxes: MedItem[] = [];
+    for (let i = 0; i < SAMPLE_BOXES.length; i++) {
+      boxes.push(...(await mockVisionProvider.extract(sampleBoxCapture(i))));
+    }
+    const piped = reconcile(sheet, boxes);
+    expect(groupsByBucket(piped, "new").map((g) => g.activeIngredient)).toEqual(["atorvastatin"]);
+    expect(groupsByBucket(piped, "notOnList").map((g) => g.activeIngredient)).toEqual(["aspirin"]);
+    expect(groupsByBucket(piped, "unmatched")).toHaveLength(1);
+    expect(piped.groups.find((g) => g.activeIngredient === "paracetamol")?.flags).toContain(
+      "duplicateInDrawer",
+    );
+    expect(piped.groups.find((g) => g.activeIngredient === "amlodipine")?.flags).toContain(
+      "strengthChanged",
+    );
   });
 
   test("five expected buckets/flags all present", () => {
