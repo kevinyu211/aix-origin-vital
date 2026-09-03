@@ -7,7 +7,17 @@ import type { Lang, MedItem, ReconcileResult } from "../modules/types";
 import { reconcile } from "../modules/reconcile";
 import { getTtsProvider } from "../modules/voice";
 
-export type ScreenId = "S0" | "S1" | "S2" | "S3" | "S4" | "S5";
+export type ScreenId =
+  | "HOME"
+  | "S0"
+  | "S1"
+  | "S2"
+  | "S3"
+  | "S4"
+  | "S5"
+  | "SOPC_S1"
+  | "SOPC_S2"
+  | "SOPC_S3";
 
 interface AppState {
   lang: Lang;
@@ -45,7 +55,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [fontScale, setFontScale] = useState<FontScale>("large");
   const [voiceOn, setVoiceOn] = useState<boolean>(false);
   const [consented, setConsented] = useState<boolean>(false);
-  const [screen, setScreen] = useState<ScreenId>("S0");
+  const [screen, setScreen] = useState<ScreenId>("HOME");
   const [sheetItems, setSheetItemsState] = useState<MedItem[]>([]);
   const [boxItems, setBoxItems] = useState<MedItem[]>([]);
   const [refusal, setRefusal] = useState<string | null>(null);

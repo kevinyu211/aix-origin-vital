@@ -90,6 +90,46 @@ export interface Strings {
     notOnList: string;
     unmatched: string;
   };
+  home: {
+    title: string;
+    subtitle: string;
+    pickPrompt: string;
+    sopcTitle: string;
+    sopcSub: string;
+    doyeukTitle: string;
+    doyeukSub: string;
+    demoNote: string;
+  };
+  sopc: {
+    badge: string;
+    s1Title: string;
+    s1Hint: string;
+    timeNote: string;
+    useSample: string;
+    captured: string;
+    slipHint: string;
+    regTimeLabel: string;
+    patientLabel: string;
+    caseLabel: string;
+    dateLabel: string;
+    specialtyLabel: string;
+    venueLabel: string;
+    watermark: string;
+    seeSteps: string;
+    s2Title: string;
+    s2Intro: string;
+    listenAll: string;
+    stopListen: string;
+    stepLabel: (n: number) => string;
+    lateTitle: string;
+    lateBody: string;
+    toEnd: string;
+    s3Title: string;
+    s3Body: string;
+    humanTitle: string;
+    replay: string;
+    backHome: string;
+  };
 }
 
 const zhHK: Strings = {
@@ -183,6 +223,46 @@ const zhHK: Strings = {
     notOnList: "唔喺你張藥單",
     unmatched: "對唔到",
   },
+  home: {
+    title: "Vital 幫手",
+    subtitle: "軟性健康支援 · 示範",
+    pickPrompt: "今日想做啲乜？",
+    sopcTitle: "今日去專科門診",
+    sopcSub: "帶你行專科門診，一步步，講俾你聽。",
+    doyeukTitle: "對藥（出院藥物對照）",
+    doyeukSub: "對照出院藥單同抽屜入面嘅藥盒。",
+    demoNote: "全部都係示範／假資料，唔好用真人資料。",
+  },
+  sopc: {
+    badge: "示範",
+    s1Title: "第一步：影預約紙",
+    s1Hint: "將專科門診預約紙放喺框入面影一張相，或者用下面嘅示範預約紙。淨係用示範／假嘅紙。",
+    timeNote: "留意：張紙上面印嘅時間係「登記時間」，唔係見醫生嘅時間。",
+    useSample: "用示範預約紙",
+    captured: "睇到喇！",
+    slipHint: "呢張係示範預約紙，睇下個「登記時間」。",
+    regTimeLabel: "登記時間",
+    patientLabel: "病人",
+    caseLabel: "個案編號",
+    dateLabel: "日期",
+    specialtyLabel: "專科",
+    venueLabel: "地點",
+    watermark: "示範",
+    seeSteps: "睇／聽三個步驟",
+    s2Title: "專科門診三步",
+    s2Intro: "跟住呢三步行就得。想聽就撳「聽晒」。",
+    listenAll: "🔊 聽晒",
+    stopListen: "停",
+    stepLabel: (n: number) => `第 ${n} 步`,
+    lateTitle: "遲到？唔使慌",
+    lateBody: "遲 15 至 30 分鐘，去登記處重新登記就得，唔會取消你個籌。",
+    toEnd: "下一步",
+    s3Title: "搞掂",
+    s3Body: "行完呢三步，喺專科大堂等叫名／叫號就得。",
+    humanTitle: "搵唔到路？問真人",
+    replay: "再聽多次",
+    backHome: "返去主頁",
+  },
 };
 
 const en: Strings = {
@@ -275,6 +355,46 @@ const en: Strings = {
     new: "New",
     notOnList: "Not on your list",
     unmatched: "Unmatched",
+  },
+  home: {
+    title: "Vital Helper",
+    subtitle: "Soft healthcare support · Demo",
+    pickPrompt: "What do you need today?",
+    sopcTitle: "Going to a specialist clinic today",
+    sopcSub: "Walks you through the specialist clinic (SOPC), one step at a time.",
+    doyeukTitle: "DoYeuk (discharge medicine check)",
+    doyeukSub: "Compare your discharge sheet with the boxes in your drawer.",
+    demoNote: "Everything here is demo / fake data — never use real personal data.",
+  },
+  sopc: {
+    badge: "DEMO",
+    s1Title: "Step 1: Photo the appointment slip",
+    s1Hint: "Put your specialist clinic appointment slip in the frame, or use the demo slip below. Use demo / fake slips only.",
+    timeNote: "Note: the time printed on the slip is the REGISTRATION time — not the time you see a doctor.",
+    useSample: "Use the demo slip",
+    captured: "Got it!",
+    slipHint: "This is a demo appointment slip — look at the “Registration time”.",
+    regTimeLabel: "Registration time",
+    patientLabel: "Patient",
+    caseLabel: "Case no.",
+    dateLabel: "Date",
+    specialtyLabel: "Specialty",
+    venueLabel: "Venue",
+    watermark: "DEMO",
+    seeSteps: "See / hear the 3 steps",
+    s2Title: "Your 3 steps",
+    s2Intro: "Follow these three steps. Tap “Listen to all” to hear them.",
+    listenAll: "🔊 Listen to all",
+    stopListen: "Stop",
+    stepLabel: (n: number) => `Step ${n}`,
+    lateTitle: "Running late? It's okay",
+    lateBody: "If you're 15–30 minutes late, just re-register at the registration counter — your slot is not cancelled.",
+    toEnd: "Next",
+    s3Title: "You're set",
+    s3Body: "After these three steps, wait in the specialty hall for your name / number to be called.",
+    humanTitle: "Can't find your way? Ask a person",
+    replay: "Listen again",
+    backHome: "Back to home",
   },
 };
 

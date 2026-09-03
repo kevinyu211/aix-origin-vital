@@ -17,13 +17,26 @@ npm install
 npx expo start        # open in Expo Go (iOS/Android)
 ```
 
+The app now opens on a **home path picker** with two demo paths:
+
+1. **今日去專科門診 — SOPC visit-day voice companion** (new). A HK HA 專科門診 walk for the
+   visit day only: read a synthetic 預約紙 → hear exactly three Cantonese steps → end on a
+   human 繳費處／登記處 counter. It teaches that the printed time is the **登記時間, not 見醫生**,
+   and that being 15–30 min late means you **re-register** (your 籌 is not cancelled). No HA Go,
+   no indoor GPS, no A&E, no pharmacy, no diagnosis.
+2. **對藥 — discharge medicine check** (unchanged). Sheet-vs-drawer reconciliation below.
+
 Demo path (cannot fail): **S0** tick consent → **S1** 「用示範藥單」 → **S2** 「影下一盒」 a few
 times → **S3** see the five expected buckets/flags → **S4** pharmacist card.
+
+SOPC demo path: **home** 「今日去專科門診」 → **SOPC S1** 「用示範預約紙」 (PWH-style 內科 slip,
+watermark 示範, 登記時間 printed clearly) → **SOPC S2** hear the three steps (「聽晒」) → **SOPC S3**
+end on a human counter.
 
 ## Test it
 
 ```bash
-npm test        # jest — reconcile C1–C6, full 陳伯 scenario, compliance, dictionary
+npm test        # jest — reconcile C1–C6, full 陳伯 scenario, compliance, dictionary, SOPC steps
 npm run typecheck
 ```
 
