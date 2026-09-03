@@ -1,0 +1,603 @@
+{
+  "title": "對藥 label vocab — HK discharge INNs",
+  "rules": [
+    "Match on inn / inn_zh / also / brands only.",
+    "No dosage, indication, warning, or start/stop language.",
+    "Synthetic demo data only."
+  ],
+  "sources": [
+    "https://www.drugoffice.gov.hk/eps/do/en/doc/List_of_registered_pharmaceutical_products_containing_paracetamol.pdf",
+    "https://www.drugoffice.gov.hk/eps/drug/productDetail/en/pharmaceutical_trade/136338",
+    "https://www.ha.org.hk/hadf/TC/Resources/Drug-Education.html",
+    "https://www.smartpatient.ha.org.hk/docs/default-source/disease-pdf/%E9%95%B7%E6%9C%9F%E7%97%9B%E7%97%87%E7%9F%A5%E5%A4%9A%E5%95%B2-tc.pdf?sfvrsn=ca987fb0_6"
+  ],
+  "count": 60,
+  "drugs": [
+    {
+      "id": "paracetamol",
+      "inn": "paracetamol",
+      "inn_zh": "撲熱息痛",
+      "also": [
+        "acetaminophen"
+      ],
+      "brands": [
+        {
+          "en": "PANADOL",
+          "zh": "必理痛",
+          "hk": "HK-02280",
+          "product": "PANADOL TAB 500MG"
+        },
+        {
+          "en": "PANADOL EXTEND",
+          "zh": null,
+          "hk": "HK-51316",
+          "product": "PANADOL EXTEND TAB 665MG"
+        },
+        {
+          "en": "BIOGESIC",
+          "zh": "痛熱適",
+          "hk": "HK-63024",
+          "product": "BIOGESIC TABLETS 500MG"
+        },
+        {
+          "en": "WATSONS PAIN & FEVER RELIEF",
+          "zh": "屈臣氏止痛退燒片",
+          "hk": "HK-67695"
+        }
+      ],
+      "source": "https://www.drugoffice.gov.hk/eps/do/en/doc/List_of_registered_pharmaceutical_products_containing_paracetamol.pdf"
+    },
+    {
+      "id": "amlodipine",
+      "inn": "amlodipine",
+      "inn_zh": "氨氯地平",
+      "also": [
+        "amlodipine besilate"
+      ],
+      "brands": [
+        {
+          "en": "NORVASC",
+          "zh": null,
+          "hk": "HK-33731",
+          "product": "NORVASC TAB 5MG"
+        }
+      ],
+      "source": "https://www.drugoffice.gov.hk/eps/drug/productDetail/en/pharmaceutical_trade/136338"
+    },
+    {
+      "id": "aspirin",
+      "inn": "aspirin",
+      "inn_zh": "阿司匹林",
+      "also": [
+        "acetylsalicylic acid",
+        "ASA"
+      ],
+      "brands": [],
+      "source": "ingredient name as used in HK Drug Office / HA materials; no HK- brand row fetched this pass"
+    },
+    {
+      "id": "atorvastatin",
+      "inn": "atorvastatin",
+      "inn_zh": "阿托伐他汀",
+      "also": [],
+      "brands": [
+        {
+          "en": "LIPITOR",
+          "zh": "立普妥"
+        }
+      ],
+      "source": "HA HADF 降膽固醇藥 category exists; brand is common HK label — confirm HK- on Drug Office before printing on a deck"
+    },
+    {
+      "id": "metformin",
+      "inn": "metformin",
+      "inn_zh": "二甲雙胍",
+      "also": [
+        "metformin hydrochloride"
+      ],
+      "brands": [
+        {
+          "en": "GLUCOPHAGE",
+          "zh": "糖尿適"
+        }
+      ],
+      "source": "HA HADF 降血糖藥; brand pending Drug Office HK- confirm"
+    },
+    {
+      "id": "omeprazole",
+      "inn": "omeprazole",
+      "inn_zh": "奧美拉唑",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "pantoprazole",
+      "inn": "pantoprazole",
+      "inn_zh": "泮托拉唑",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "lansoprazole",
+      "inn": "lansoprazole",
+      "inn_zh": "蘭索拉唑",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "losartan",
+      "inn": "losartan",
+      "inn_zh": "氯沙坦",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "valsartan",
+      "inn": "valsartan",
+      "inn_zh": "纈沙坦",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "irbesartan",
+      "inn": "irbesartan",
+      "inn_zh": "厄貝沙坦",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "ramipril",
+      "inn": "ramipril",
+      "inn_zh": "雷米普利",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "perindopril",
+      "inn": "perindopril",
+      "inn_zh": "培哚普利",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "enalapril",
+      "inn": "enalapril",
+      "inn_zh": "依那普利",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "bisoprolol",
+      "inn": "bisoprolol",
+      "inn_zh": "比索洛爾",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "carvedilol",
+      "inn": "carvedilol",
+      "inn_zh": "卡維地洛",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "metoprolol",
+      "inn": "metoprolol",
+      "inn_zh": "美托洛爾",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "atenolol",
+      "inn": "atenolol",
+      "inn_zh": "阿替洛爾",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "furosemide",
+      "inn": "furosemide",
+      "inn_zh": "呋塞米",
+      "also": [
+        "frusemide"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "spironolactone",
+      "inn": "spironolactone",
+      "inn_zh": "螺內酯",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "hydrochlorothiazide",
+      "inn": "hydrochlorothiazide",
+      "inn_zh": "氫氯噻嗪",
+      "also": [],
+      "brands": [
+        {
+          "en": "HCTZ",
+          "zh": null
+        }
+      ],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "clopidogrel",
+      "inn": "clopidogrel",
+      "inn_zh": "氯吡格雷",
+      "also": [],
+      "brands": [
+        {
+          "en": "PLAVIX",
+          "zh": null
+        }
+      ],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "warfarin",
+      "inn": "warfarin",
+      "inn_zh": "華法林",
+      "also": [],
+      "brands": [],
+      "source": "https://www.ha.org.hk/hadf/TC/Resources/Drug-Education.html (華法林 - 口服抗凝血藥)"
+    },
+    {
+      "id": "rivaroxaban",
+      "inn": "rivaroxaban",
+      "inn_zh": "利伐沙班",
+      "also": [],
+      "brands": [
+        {
+          "en": "XARELTO",
+          "zh": null
+        }
+      ],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "apixaban",
+      "inn": "apixaban",
+      "inn_zh": "阿哌沙班",
+      "also": [],
+      "brands": [
+        {
+          "en": "ELIQUIS",
+          "zh": null
+        }
+      ],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "sitagliptin",
+      "inn": "sitagliptin",
+      "inn_zh": "西格列汀",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "gliclazide",
+      "inn": "gliclazide",
+      "inn_zh": "格列齊特",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "empagliflozin",
+      "inn": "empagliflozin",
+      "inn_zh": "恩格列淨",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "simvastatin",
+      "inn": "simvastatin",
+      "inn_zh": "辛伐他汀",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "rosuvastatin",
+      "inn": "rosuvastatin",
+      "inn_zh": "瑞舒伐他汀",
+      "also": [],
+      "brands": [
+        {
+          "en": "CRESTOR",
+          "zh": null
+        }
+      ],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "ezetimibe",
+      "inn": "ezetimibe",
+      "inn_zh": "依折麥布",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "nifedipine",
+      "inn": "nifedipine",
+      "inn_zh": "硝苯地平",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "diltiazem",
+      "inn": "diltiazem",
+      "inn_zh": "地爾硫䓬",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "isosorbide_mononitrate",
+      "inn": "isosorbide mononitrate",
+      "inn_zh": "單硝酸異山梨酯",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "salbutamol",
+      "inn": "salbutamol",
+      "inn_zh": "沙丁胺醇",
+      "also": [
+        "albuterol"
+      ],
+      "brands": [
+        {
+          "en": "VENTOLIN",
+          "zh": null
+        }
+      ],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "ipratropium",
+      "inn": "ipratropium",
+      "inn_zh": "異丙托溴銨",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "prednisolone",
+      "inn": "prednisolone",
+      "inn_zh": "潑尼松龍",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "levothyroxine",
+      "inn": "levothyroxine",
+      "inn_zh": "左甲狀腺素",
+      "also": [
+        "thyroxine"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "allopurinol",
+      "inn": "allopurinol",
+      "inn_zh": "別嘌醇",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "gabapentin",
+      "inn": "gabapentin",
+      "inn_zh": "加巴噴丁",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "pregabalin",
+      "inn": "pregabalin",
+      "inn_zh": "普瑞巴林",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "sertraline",
+      "inn": "sertraline",
+      "inn_zh": "舍曲林",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "tamsulosin",
+      "inn": "tamsulosin",
+      "inn_zh": "坦索羅辛",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "finasteride",
+      "inn": "finasteride",
+      "inn_zh": "非那雄胺",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "ferrous_sulfate",
+      "inn": "ferrous sulfate",
+      "inn_zh": "硫酸亞鐵",
+      "also": [
+        "ferrous sulphate"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "folic_acid",
+      "inn": "folic acid",
+      "inn_zh": "葉酸",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "calcium_carbonate",
+      "inn": "calcium carbonate",
+      "inn_zh": "碳酸鈣",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "colecalciferol",
+      "inn": "colecalciferol",
+      "inn_zh": "膽鈣化醇",
+      "also": [
+        "vitamin D3",
+        "cholecalciferol"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "lactulose",
+      "inn": "lactulose",
+      "inn_zh": "乳果糖",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "senna",
+      "inn": "senna",
+      "inn_zh": "番瀉葉",
+      "also": [
+        "sennoside"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "amoxicillin",
+      "inn": "amoxicillin",
+      "inn_zh": "阿莫西林",
+      "also": [
+        "amoxycillin"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "ibuprofen",
+      "inn": "ibuprofen",
+      "inn_zh": "布洛芬",
+      "also": [],
+      "brands": [],
+      "source": "https://www.smartpatient.ha.org.hk/docs/default-source/disease-pdf/長期痛症知多啲-tc.pdf?sfvrsn=ca987fb0_6"
+    },
+    {
+      "id": "diclofenac",
+      "inn": "diclofenac",
+      "inn_zh": "雙氯芬酸",
+      "also": [],
+      "brands": [
+        {
+          "en": "VOLTAREN",
+          "zh": null
+        },
+        {
+          "en": "CATAFLAM",
+          "zh": null
+        }
+      ],
+      "source": "HA Smart Patient 長期痛症知多啲 (diclofenac Voltaren/Cataflam; paracetamol Panadol 必理痛)"
+    },
+    {
+      "id": "tramadol",
+      "inn": "tramadol",
+      "inn_zh": "曲馬多",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "latanoprost",
+      "inn": "latanoprost",
+      "inn_zh": "拉坦前列素",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "timolol",
+      "inn": "timolol",
+      "inn_zh": "噻嗎洛爾",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "donepezil",
+      "inn": "donepezil",
+      "inn_zh": "多奈哌齊",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "digoxin",
+      "inn": "digoxin",
+      "inn_zh": "地高辛",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "potassium_chloride",
+      "inn": "potassium chloride",
+      "inn_zh": "氯化鉀",
+      "also": [],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    },
+    {
+      "id": "sodium_valproate",
+      "inn": "sodium valproate",
+      "inn_zh": "丙戊酸鈉",
+      "also": [
+        "valproate"
+      ],
+      "brands": [],
+      "source": "HA HADF drug-education categories / common HK public-hospital INN; brands without hk are display aliases only"
+    }
+  ]
+}

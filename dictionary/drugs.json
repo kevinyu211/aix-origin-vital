@@ -1,0 +1,1459 @@
+[
+  {
+    "id": "paracetamol",
+    "activeIngredient": "paracetamol",
+    "ingredientZh": "撲熱息痛",
+    "brandNames": [
+      "PANADOL",
+      "必理痛",
+      "PANADOL EXTEND",
+      "BIOGESIC",
+      "痛熱適",
+      "WATSONS PAIN & FEVER RELIEF",
+      "屈臣氏止痛退燒片"
+    ],
+    "aliases": [
+      "acetaminophen",
+      "PARACETAMOL",
+      "撲熱息痛",
+      "PANADOL TAB 500MG",
+      "PANADOL EXTEND TAB 665MG",
+      "BIOGESIC TABLETS 500MG",
+      "PARACETAMOL TAB 500MG",
+      "必理痛"
+    ],
+    "strengths": [
+      "500mg",
+      "665mg",
+      "500mg"
+    ],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係撲熱息痛。",
+      "en": "This pack is labelled as paracetamol."
+    }
+  },
+  {
+    "id": "amlodipine",
+    "activeIngredient": "amlodipine",
+    "ingredientZh": "氨氯地平",
+    "brandNames": [
+      "NORVASC"
+    ],
+    "aliases": [
+      "amlodipine besilate",
+      "AMLODIPINE",
+      "氨氯地平",
+      "NORVASC TAB 5MG",
+      "AMLODIPINE TAB 5MG",
+      "AMLODIPINE TAB 10MG",
+      "Amlodipin"
+    ],
+    "strengths": [
+      "5mg",
+      "10mg"
+    ],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係氨氯地平。",
+      "en": "This pack is labelled as amlodipine."
+    }
+  },
+  {
+    "id": "aspirin",
+    "activeIngredient": "aspirin",
+    "ingredientZh": "阿士匹靈",
+    "brandNames": [
+      "ASPIRIN",
+      "阿士匹靈"
+    ],
+    "aliases": [
+      "acetylsalicylic acid",
+      "ASA",
+      "ASPIRIN",
+      "阿司匹林",
+      "ASPIRIN TAB 80MG",
+      "阿士匹靈"
+    ],
+    "strengths": [
+      "80mg"
+    ],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係阿司匹林。",
+      "en": "This pack is labelled as aspirin."
+    }
+  },
+  {
+    "id": "atorvastatin",
+    "activeIngredient": "atorvastatin",
+    "ingredientZh": "阿托伐他汀",
+    "brandNames": [
+      "LIPITOR",
+      "立普妥"
+    ],
+    "aliases": [
+      "ATORVASTATIN",
+      "阿托伐他汀",
+      "ATORVASTATIN TAB 20MG"
+    ],
+    "strengths": [
+      "20mg"
+    ],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係阿托伐他汀。",
+      "en": "This pack is labelled as atorvastatin."
+    }
+  },
+  {
+    "id": "metformin",
+    "activeIngredient": "metformin",
+    "ingredientZh": "二甲雙胍",
+    "brandNames": [
+      "GLUCOPHAGE",
+      "糖尿適"
+    ],
+    "aliases": [
+      "metformin hydrochloride",
+      "METFORMIN",
+      "二甲雙胍",
+      "METFORMIN TAB 500MG"
+    ],
+    "strengths": [
+      "500mg"
+    ],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係二甲雙胍。",
+      "en": "This pack is labelled as metformin."
+    }
+  },
+  {
+    "id": "omeprazole",
+    "activeIngredient": "omeprazole",
+    "ingredientZh": "奧美拉唑",
+    "brandNames": [],
+    "aliases": [
+      "OMEPRAZOLE",
+      "奧美拉唑",
+      "OMEPRAZOLE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係奧美拉唑。",
+      "en": "This pack is labelled as omeprazole."
+    }
+  },
+  {
+    "id": "pantoprazole",
+    "activeIngredient": "pantoprazole",
+    "ingredientZh": "泮托拉唑",
+    "brandNames": [],
+    "aliases": [
+      "PANTOPRAZOLE",
+      "泮托拉唑",
+      "PANTOPRAZOLE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係泮托拉唑。",
+      "en": "This pack is labelled as pantoprazole."
+    }
+  },
+  {
+    "id": "lansoprazole",
+    "activeIngredient": "lansoprazole",
+    "ingredientZh": "蘭索拉唑",
+    "brandNames": [],
+    "aliases": [
+      "LANSOPRAZOLE",
+      "蘭索拉唑",
+      "LANSOPRAZOLE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係蘭索拉唑。",
+      "en": "This pack is labelled as lansoprazole."
+    }
+  },
+  {
+    "id": "losartan",
+    "activeIngredient": "losartan",
+    "ingredientZh": "氯沙坦",
+    "brandNames": [],
+    "aliases": [
+      "LOSARTAN",
+      "氯沙坦",
+      "LOSARTAN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係氯沙坦。",
+      "en": "This pack is labelled as losartan."
+    }
+  },
+  {
+    "id": "valsartan",
+    "activeIngredient": "valsartan",
+    "ingredientZh": "纈沙坦",
+    "brandNames": [],
+    "aliases": [
+      "VALSARTAN",
+      "纈沙坦",
+      "VALSARTAN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係纈沙坦。",
+      "en": "This pack is labelled as valsartan."
+    }
+  },
+  {
+    "id": "irbesartan",
+    "activeIngredient": "irbesartan",
+    "ingredientZh": "厄貝沙坦",
+    "brandNames": [],
+    "aliases": [
+      "IRBESARTAN",
+      "厄貝沙坦",
+      "IRBESARTAN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係厄貝沙坦。",
+      "en": "This pack is labelled as irbesartan."
+    }
+  },
+  {
+    "id": "ramipril",
+    "activeIngredient": "ramipril",
+    "ingredientZh": "雷米普利",
+    "brandNames": [],
+    "aliases": [
+      "RAMIPRIL",
+      "雷米普利",
+      "RAMIPRIL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係雷米普利。",
+      "en": "This pack is labelled as ramipril."
+    }
+  },
+  {
+    "id": "perindopril",
+    "activeIngredient": "perindopril",
+    "ingredientZh": "培哚普利",
+    "brandNames": [],
+    "aliases": [
+      "PERINDOPRIL",
+      "培哚普利",
+      "PERINDOPRIL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係培哚普利。",
+      "en": "This pack is labelled as perindopril."
+    }
+  },
+  {
+    "id": "enalapril",
+    "activeIngredient": "enalapril",
+    "ingredientZh": "依那普利",
+    "brandNames": [],
+    "aliases": [
+      "ENALAPRIL",
+      "依那普利",
+      "ENALAPRIL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係依那普利。",
+      "en": "This pack is labelled as enalapril."
+    }
+  },
+  {
+    "id": "bisoprolol",
+    "activeIngredient": "bisoprolol",
+    "ingredientZh": "比索洛爾",
+    "brandNames": [],
+    "aliases": [
+      "BISOPROLOL",
+      "比索洛爾",
+      "BISOPROLOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係比索洛爾。",
+      "en": "This pack is labelled as bisoprolol."
+    }
+  },
+  {
+    "id": "carvedilol",
+    "activeIngredient": "carvedilol",
+    "ingredientZh": "卡維地洛",
+    "brandNames": [],
+    "aliases": [
+      "CARVEDILOL",
+      "卡維地洛",
+      "CARVEDILOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係卡維地洛。",
+      "en": "This pack is labelled as carvedilol."
+    }
+  },
+  {
+    "id": "metoprolol",
+    "activeIngredient": "metoprolol",
+    "ingredientZh": "美托洛爾",
+    "brandNames": [],
+    "aliases": [
+      "METOPROLOL",
+      "美托洛爾",
+      "METOPROLOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係美托洛爾。",
+      "en": "This pack is labelled as metoprolol."
+    }
+  },
+  {
+    "id": "atenolol",
+    "activeIngredient": "atenolol",
+    "ingredientZh": "阿替洛爾",
+    "brandNames": [],
+    "aliases": [
+      "ATENOLOL",
+      "阿替洛爾",
+      "ATENOLOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係阿替洛爾。",
+      "en": "This pack is labelled as atenolol."
+    }
+  },
+  {
+    "id": "furosemide",
+    "activeIngredient": "furosemide",
+    "ingredientZh": "呋塞米",
+    "brandNames": [],
+    "aliases": [
+      "frusemide",
+      "FUROSEMIDE",
+      "呋塞米",
+      "FUROSEMIDE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係呋塞米。",
+      "en": "This pack is labelled as furosemide."
+    }
+  },
+  {
+    "id": "spironolactone",
+    "activeIngredient": "spironolactone",
+    "ingredientZh": "螺內酯",
+    "brandNames": [],
+    "aliases": [
+      "SPIRONOLACTONE",
+      "螺內酯",
+      "SPIRONOLACTONE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係螺內酯。",
+      "en": "This pack is labelled as spironolactone."
+    }
+  },
+  {
+    "id": "hydrochlorothiazide",
+    "activeIngredient": "hydrochlorothiazide",
+    "ingredientZh": "氫氯噻嗪",
+    "brandNames": [
+      "HCTZ"
+    ],
+    "aliases": [
+      "HYDROCHLOROTHIAZIDE",
+      "氫氯噻嗪",
+      "HCTZ",
+      "HYDROCHLOROTHIAZIDE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係氫氯噻嗪。",
+      "en": "This pack is labelled as hydrochlorothiazide."
+    }
+  },
+  {
+    "id": "clopidogrel",
+    "activeIngredient": "clopidogrel",
+    "ingredientZh": "氯吡格雷",
+    "brandNames": [
+      "PLAVIX"
+    ],
+    "aliases": [
+      "CLOPIDOGREL",
+      "氯吡格雷",
+      "PLAVIX",
+      "CLOPIDOGREL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係氯吡格雷。",
+      "en": "This pack is labelled as clopidogrel."
+    }
+  },
+  {
+    "id": "warfarin",
+    "activeIngredient": "warfarin",
+    "ingredientZh": "華法林",
+    "brandNames": [],
+    "aliases": [
+      "WARFARIN",
+      "華法林",
+      "WARFARIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係華法林。",
+      "en": "This pack is labelled as warfarin."
+    }
+  },
+  {
+    "id": "rivaroxaban",
+    "activeIngredient": "rivaroxaban",
+    "ingredientZh": "利伐沙班",
+    "brandNames": [
+      "XARELTO"
+    ],
+    "aliases": [
+      "RIVAROXABAN",
+      "利伐沙班",
+      "XARELTO",
+      "RIVAROXABAN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係利伐沙班。",
+      "en": "This pack is labelled as rivaroxaban."
+    }
+  },
+  {
+    "id": "apixaban",
+    "activeIngredient": "apixaban",
+    "ingredientZh": "阿哌沙班",
+    "brandNames": [
+      "ELIQUIS"
+    ],
+    "aliases": [
+      "APIXABAN",
+      "阿哌沙班",
+      "ELIQUIS",
+      "APIXABAN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係阿哌沙班。",
+      "en": "This pack is labelled as apixaban."
+    }
+  },
+  {
+    "id": "sitagliptin",
+    "activeIngredient": "sitagliptin",
+    "ingredientZh": "西格列汀",
+    "brandNames": [],
+    "aliases": [
+      "SITAGLIPTIN",
+      "西格列汀",
+      "SITAGLIPTIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係西格列汀。",
+      "en": "This pack is labelled as sitagliptin."
+    }
+  },
+  {
+    "id": "gliclazide",
+    "activeIngredient": "gliclazide",
+    "ingredientZh": "格列齊特",
+    "brandNames": [],
+    "aliases": [
+      "GLICLAZIDE",
+      "格列齊特",
+      "GLICLAZIDE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係格列齊特。",
+      "en": "This pack is labelled as gliclazide."
+    }
+  },
+  {
+    "id": "empagliflozin",
+    "activeIngredient": "empagliflozin",
+    "ingredientZh": "恩格列淨",
+    "brandNames": [],
+    "aliases": [
+      "EMPAGLIFLOZIN",
+      "恩格列淨",
+      "EMPAGLIFLOZIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係恩格列淨。",
+      "en": "This pack is labelled as empagliflozin."
+    }
+  },
+  {
+    "id": "simvastatin",
+    "activeIngredient": "simvastatin",
+    "ingredientZh": "辛伐他汀",
+    "brandNames": [],
+    "aliases": [
+      "SIMVASTATIN",
+      "辛伐他汀",
+      "SIMVASTATIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係辛伐他汀。",
+      "en": "This pack is labelled as simvastatin."
+    }
+  },
+  {
+    "id": "rosuvastatin",
+    "activeIngredient": "rosuvastatin",
+    "ingredientZh": "瑞舒伐他汀",
+    "brandNames": [
+      "CRESTOR"
+    ],
+    "aliases": [
+      "ROSUVASTATIN",
+      "瑞舒伐他汀",
+      "CRESTOR",
+      "ROSUVASTATIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係瑞舒伐他汀。",
+      "en": "This pack is labelled as rosuvastatin."
+    }
+  },
+  {
+    "id": "ezetimibe",
+    "activeIngredient": "ezetimibe",
+    "ingredientZh": "依折麥布",
+    "brandNames": [],
+    "aliases": [
+      "EZETIMIBE",
+      "依折麥布",
+      "EZETIMIBE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係依折麥布。",
+      "en": "This pack is labelled as ezetimibe."
+    }
+  },
+  {
+    "id": "nifedipine",
+    "activeIngredient": "nifedipine",
+    "ingredientZh": "硝苯地平",
+    "brandNames": [],
+    "aliases": [
+      "NIFEDIPINE",
+      "硝苯地平",
+      "NIFEDIPINE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係硝苯地平。",
+      "en": "This pack is labelled as nifedipine."
+    }
+  },
+  {
+    "id": "diltiazem",
+    "activeIngredient": "diltiazem",
+    "ingredientZh": "地爾硫䓬",
+    "brandNames": [],
+    "aliases": [
+      "DILTIAZEM",
+      "地爾硫䓬",
+      "DILTIAZEM TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係地爾硫䓬。",
+      "en": "This pack is labelled as diltiazem."
+    }
+  },
+  {
+    "id": "isosorbide_mononitrate",
+    "activeIngredient": "isosorbide mononitrate",
+    "ingredientZh": "單硝酸異山梨酯",
+    "brandNames": [],
+    "aliases": [
+      "ISOSORBIDE MONONITRATE",
+      "單硝酸異山梨酯",
+      "ISOSORBIDE MONONITRATE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係單硝酸異山梨酯。",
+      "en": "This pack is labelled as isosorbide mononitrate."
+    }
+  },
+  {
+    "id": "salbutamol",
+    "activeIngredient": "salbutamol",
+    "ingredientZh": "沙丁胺醇",
+    "brandNames": [
+      "VENTOLIN"
+    ],
+    "aliases": [
+      "albuterol",
+      "SALBUTAMOL",
+      "沙丁胺醇",
+      "VENTOLIN",
+      "SALBUTAMOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係沙丁胺醇。",
+      "en": "This pack is labelled as salbutamol."
+    }
+  },
+  {
+    "id": "ipratropium",
+    "activeIngredient": "ipratropium",
+    "ingredientZh": "異丙托溴銨",
+    "brandNames": [],
+    "aliases": [
+      "IPRATROPIUM",
+      "異丙托溴銨",
+      "IPRATROPIUM TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係異丙托溴銨。",
+      "en": "This pack is labelled as ipratropium."
+    }
+  },
+  {
+    "id": "prednisolone",
+    "activeIngredient": "prednisolone",
+    "ingredientZh": "潑尼松龍",
+    "brandNames": [],
+    "aliases": [
+      "PREDNISOLONE",
+      "潑尼松龍",
+      "PREDNISOLONE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係潑尼松龍。",
+      "en": "This pack is labelled as prednisolone."
+    }
+  },
+  {
+    "id": "levothyroxine",
+    "activeIngredient": "levothyroxine",
+    "ingredientZh": "左甲狀腺素",
+    "brandNames": [],
+    "aliases": [
+      "thyroxine",
+      "LEVOTHYROXINE",
+      "左甲狀腺素",
+      "LEVOTHYROXINE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係左甲狀腺素。",
+      "en": "This pack is labelled as levothyroxine."
+    }
+  },
+  {
+    "id": "allopurinol",
+    "activeIngredient": "allopurinol",
+    "ingredientZh": "別嘌醇",
+    "brandNames": [],
+    "aliases": [
+      "ALLOPURINOL",
+      "別嘌醇",
+      "ALLOPURINOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係別嘌醇。",
+      "en": "This pack is labelled as allopurinol."
+    }
+  },
+  {
+    "id": "gabapentin",
+    "activeIngredient": "gabapentin",
+    "ingredientZh": "加巴噴丁",
+    "brandNames": [],
+    "aliases": [
+      "GABAPENTIN",
+      "加巴噴丁",
+      "GABAPENTIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係加巴噴丁。",
+      "en": "This pack is labelled as gabapentin."
+    }
+  },
+  {
+    "id": "pregabalin",
+    "activeIngredient": "pregabalin",
+    "ingredientZh": "普瑞巴林",
+    "brandNames": [],
+    "aliases": [
+      "PREGABALIN",
+      "普瑞巴林",
+      "PREGABALIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係普瑞巴林。",
+      "en": "This pack is labelled as pregabalin."
+    }
+  },
+  {
+    "id": "sertraline",
+    "activeIngredient": "sertraline",
+    "ingredientZh": "舍曲林",
+    "brandNames": [],
+    "aliases": [
+      "SERTRALINE",
+      "舍曲林",
+      "SERTRALINE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係舍曲林。",
+      "en": "This pack is labelled as sertraline."
+    }
+  },
+  {
+    "id": "tamsulosin",
+    "activeIngredient": "tamsulosin",
+    "ingredientZh": "坦索羅辛",
+    "brandNames": [],
+    "aliases": [
+      "TAMSULOSIN",
+      "坦索羅辛",
+      "TAMSULOSIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係坦索羅辛。",
+      "en": "This pack is labelled as tamsulosin."
+    }
+  },
+  {
+    "id": "finasteride",
+    "activeIngredient": "finasteride",
+    "ingredientZh": "非那雄胺",
+    "brandNames": [],
+    "aliases": [
+      "FINASTERIDE",
+      "非那雄胺",
+      "FINASTERIDE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係非那雄胺。",
+      "en": "This pack is labelled as finasteride."
+    }
+  },
+  {
+    "id": "ferrous_sulfate",
+    "activeIngredient": "ferrous sulfate",
+    "ingredientZh": "硫酸亞鐵",
+    "brandNames": [],
+    "aliases": [
+      "ferrous sulphate",
+      "FERROUS SULFATE",
+      "硫酸亞鐵",
+      "FERROUS SULFATE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係硫酸亞鐵。",
+      "en": "This pack is labelled as ferrous sulfate."
+    }
+  },
+  {
+    "id": "folic_acid",
+    "activeIngredient": "folic acid",
+    "ingredientZh": "葉酸",
+    "brandNames": [],
+    "aliases": [
+      "FOLIC ACID",
+      "葉酸",
+      "FOLIC ACID TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係葉酸。",
+      "en": "This pack is labelled as folic acid."
+    }
+  },
+  {
+    "id": "calcium_carbonate",
+    "activeIngredient": "calcium carbonate",
+    "ingredientZh": "碳酸鈣",
+    "brandNames": [],
+    "aliases": [
+      "CALCIUM CARBONATE",
+      "碳酸鈣",
+      "CALCIUM CARBONATE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係碳酸鈣。",
+      "en": "This pack is labelled as calcium carbonate."
+    }
+  },
+  {
+    "id": "colecalciferol",
+    "activeIngredient": "colecalciferol",
+    "ingredientZh": "膽鈣化醇",
+    "brandNames": [],
+    "aliases": [
+      "vitamin D3",
+      "cholecalciferol",
+      "COLECALCIFEROL",
+      "膽鈣化醇",
+      "COLECALCIFEROL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係膽鈣化醇。",
+      "en": "This pack is labelled as colecalciferol."
+    }
+  },
+  {
+    "id": "lactulose",
+    "activeIngredient": "lactulose",
+    "ingredientZh": "乳果糖",
+    "brandNames": [],
+    "aliases": [
+      "LACTULOSE",
+      "乳果糖",
+      "LACTULOSE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係乳果糖。",
+      "en": "This pack is labelled as lactulose."
+    }
+  },
+  {
+    "id": "senna",
+    "activeIngredient": "senna",
+    "ingredientZh": "番瀉葉",
+    "brandNames": [],
+    "aliases": [
+      "sennoside",
+      "SENNA",
+      "番瀉葉",
+      "SENNA TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係番瀉葉。",
+      "en": "This pack is labelled as senna."
+    }
+  },
+  {
+    "id": "amoxicillin",
+    "activeIngredient": "amoxicillin",
+    "ingredientZh": "阿莫西林",
+    "brandNames": [],
+    "aliases": [
+      "amoxycillin",
+      "AMOXICILLIN",
+      "阿莫西林",
+      "AMOXICILLIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係阿莫西林。",
+      "en": "This pack is labelled as amoxicillin."
+    }
+  },
+  {
+    "id": "ibuprofen",
+    "activeIngredient": "ibuprofen",
+    "ingredientZh": "布洛芬",
+    "brandNames": [],
+    "aliases": [
+      "IBUPROFEN",
+      "布洛芬",
+      "IBUPROFEN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係布洛芬。",
+      "en": "This pack is labelled as ibuprofen."
+    }
+  },
+  {
+    "id": "diclofenac",
+    "activeIngredient": "diclofenac",
+    "ingredientZh": "雙氯芬酸",
+    "brandNames": [
+      "VOLTAREN",
+      "CATAFLAM"
+    ],
+    "aliases": [
+      "DICLOFENAC",
+      "雙氯芬酸",
+      "VOLTAREN",
+      "CATAFLAM",
+      "DICLOFENAC TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係雙氯芬酸。",
+      "en": "This pack is labelled as diclofenac."
+    }
+  },
+  {
+    "id": "tramadol",
+    "activeIngredient": "tramadol",
+    "ingredientZh": "曲馬多",
+    "brandNames": [],
+    "aliases": [
+      "TRAMADOL",
+      "曲馬多",
+      "TRAMADOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係曲馬多。",
+      "en": "This pack is labelled as tramadol."
+    }
+  },
+  {
+    "id": "latanoprost",
+    "activeIngredient": "latanoprost",
+    "ingredientZh": "拉坦前列素",
+    "brandNames": [],
+    "aliases": [
+      "LATANOPROST",
+      "拉坦前列素",
+      "LATANOPROST TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係拉坦前列素。",
+      "en": "This pack is labelled as latanoprost."
+    }
+  },
+  {
+    "id": "timolol",
+    "activeIngredient": "timolol",
+    "ingredientZh": "噻嗎洛爾",
+    "brandNames": [],
+    "aliases": [
+      "TIMOLOL",
+      "噻嗎洛爾",
+      "TIMOLOL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係噻嗎洛爾。",
+      "en": "This pack is labelled as timolol."
+    }
+  },
+  {
+    "id": "donepezil",
+    "activeIngredient": "donepezil",
+    "ingredientZh": "多奈哌齊",
+    "brandNames": [],
+    "aliases": [
+      "DONEPEZIL",
+      "多奈哌齊",
+      "DONEPEZIL TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係多奈哌齊。",
+      "en": "This pack is labelled as donepezil."
+    }
+  },
+  {
+    "id": "digoxin",
+    "activeIngredient": "digoxin",
+    "ingredientZh": "地高辛",
+    "brandNames": [],
+    "aliases": [
+      "DIGOXIN",
+      "地高辛",
+      "DIGOXIN TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係地高辛。",
+      "en": "This pack is labelled as digoxin."
+    }
+  },
+  {
+    "id": "potassium_chloride",
+    "activeIngredient": "potassium chloride",
+    "ingredientZh": "氯化鉀",
+    "brandNames": [],
+    "aliases": [
+      "POTASSIUM CHLORIDE",
+      "氯化鉀",
+      "POTASSIUM CHLORIDE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係氯化鉀。",
+      "en": "This pack is labelled as potassium chloride."
+    }
+  },
+  {
+    "id": "sodium_valproate",
+    "activeIngredient": "sodium valproate",
+    "ingredientZh": "丙戊酸鈉",
+    "brandNames": [],
+    "aliases": [
+      "valproate",
+      "SODIUM VALPROATE",
+      "丙戊酸鈉",
+      "SODIUM VALPROATE TAB"
+    ],
+    "strengths": [],
+    "forms": [
+      "tablet"
+    ],
+    "category": {
+      "zh": "藥物",
+      "en": "medicine"
+    },
+    "plain": {
+      "zh": "呢隻藥嘅成分係丙戊酸鈉。",
+      "en": "This pack is labelled as sodium valproate."
+    }
+  }
+]
