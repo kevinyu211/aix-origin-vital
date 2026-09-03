@@ -148,4 +148,4 @@ on this path; **no diagnosis**. Forbidden advice words stay out of all copy.
 watermark **示範**, fabricated patient, **登記時間 printed clearly**. No real patient data.
 
 **Stack:** unchanged — Expo (React Native) + TypeScript, no backend, no accounts, no Clerk/Convex.
-Traditional-Chinese written Cantonese with an English toggle.
+**Languages:** 粵 written Cantonese (`zh-HK`, default) · 简体 Simplified Chinese (`zh-CN`) · English (`en`) — three-way 粵 / 简 / EN cycle.

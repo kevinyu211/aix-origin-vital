@@ -18,7 +18,7 @@ import {
   useType,
 } from "../components/UIKit";
 import { useApp } from "../state/AppContext";
-import { L } from "../modules/i18n";
+import { L, langPillLabel } from "../modules/i18n";
 import { colors, MIN_TAP, radius, spacing } from "../modules/ui";
 
 function PathCard({
@@ -68,8 +68,13 @@ export function Home() {
           <Pressable accessibilityRole="button" onPress={toggleFontScale} style={styles.pill}>
             <Small color={colors.ink}>{fontScale === "large" ? "A-" : "A+"}</Small>
           </Pressable>
-          <Pressable accessibilityRole="button" onPress={toggleLang} style={styles.pill}>
-            <Small color={colors.ink}>{lang === "zh-HK" ? "EN" : "中"}</Small>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="粵 / 简 / EN"
+            onPress={toggleLang}
+            style={styles.pill}
+          >
+            <Small color={colors.ink}>{langPillLabel(lang)}</Small>
           </Pressable>
         </View>
       </View>

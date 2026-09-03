@@ -57,14 +57,21 @@ export function Welcome() {
         <View style={{ flexDirection: "row", gap: spacing.md }}>
           <View style={{ flex: 1 }}>
             <PrimaryButton
-              label="粵語 中文"
+              label="粵"
               color={lang === "zh-HK" ? colors.ink : colors.line}
               onPress={() => setLang("zh-HK")}
             />
           </View>
           <View style={{ flex: 1 }}>
             <PrimaryButton
-              label="English"
+              label="简"
+              color={lang === "zh-CN" ? colors.ink : colors.line}
+              onPress={() => setLang("zh-CN")}
+            />
+          </View>
+          <View style={{ flex: 1 }}>
+            <PrimaryButton
+              label="EN"
               color={lang === "en" ? colors.ink : colors.line}
               onPress={() => setLang("en")}
             />

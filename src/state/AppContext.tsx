@@ -84,7 +84,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       refusal,
       result,
       setLang,
-      toggleLang: () => setLang((p) => (p === "zh-HK" ? "en" : "zh-HK")),
+      // Three-way cycle: 粵 (zh-HK) → 简 (zh-CN) → EN (en) → 粵 …
+      toggleLang: () =>
+        setLang((p) => (p === "zh-HK" ? "zh-CN" : p === "zh-CN" ? "en" : "zh-HK")),
       setFontScale,
       toggleFontScale: () => setFontScale((p) => (p === "large" ? "normal" : "large")),
       toggleVoice: () => setVoiceOn((p) => !p),

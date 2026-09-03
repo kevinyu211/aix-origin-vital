@@ -21,7 +21,7 @@ import { useApp } from "../state/AppContext";
 import { L } from "../modules/i18n";
 import { colors, radius, spacing } from "../modules/ui";
 import { buildPharmacistItems, buildShareText } from "../modules/handoff";
-import { DISCLAIMER } from "../modules/compliance";
+import { disclaimerFor } from "../modules/compliance";
 import { SAMPLE_PATIENT } from "../modules/samples";
 
 export function Pharmacist() {
@@ -31,7 +31,12 @@ export function Pharmacist() {
   const [note, setNote] = useState<string | null>(null);
 
   const items = buildPharmacistItems(result, lang);
-  const patientLabel = lang === "en" ? `${SAMPLE_PATIENT.name} (demo)` : `${SAMPLE_PATIENT.name}（示範）`;
+  const patientLabel =
+    lang === "en"
+      ? `${SAMPLE_PATIENT.name} (demo)`
+      : lang === "zh-CN"
+        ? `${SAMPLE_PATIENT.name}（示范）`
+        : `${SAMPLE_PATIENT.name}（示範）`;
 
   const onShare = async () => {
     try {
@@ -70,7 +75,7 @@ export function Pharmacist() {
             ))
           )}
           <View style={{ marginTop: spacing.sm, padding: spacing.sm, backgroundColor: "#EEF0EC", borderRadius: radius.sm }}>
-            <Small color={colors.inkSoft}>{DISCLAIMER}</Small>
+            <Small color={colors.inkSoft}>{disclaimerFor(lang)}</Small>
           </View>
         </Card>
       </View>

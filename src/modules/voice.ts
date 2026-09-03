@@ -14,7 +14,10 @@ export interface TtsProvider {
 }
 
 function ttsLangCode(lang: Lang): string {
-  return lang === "en" ? "en-US" : "zh-HK";
+  if (lang === "en") return "en-US";
+  // zh-CN reads in Mandarin; zh-HK stays Cantonese.
+  if (lang === "zh-CN") return "zh-CN";
+  return "zh-HK";
 }
 
 export const expoSpeechProvider: TtsProvider = {
