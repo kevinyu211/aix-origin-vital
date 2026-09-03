@@ -6,10 +6,10 @@ import { useApp } from "../state/AppContext";
 import { L } from "../modules/i18n";
 import { colors } from "../modules/ui";
 import { DICTIONARY_COUNT, DICTIONARY_TITLE } from "../modules/dictionary";
-import { getVisionProviderName, getTtsProviderName } from "../modules/config";
+import { effectiveTtsProvider, effectiveVisionProvider, getTtsProviderName, getVisionProviderName } from "../modules/config";
 
 export function About() {
-  const { lang, goTo } = useApp();
+  const { lang, goTo, liveOverlayOn } = useApp();
   const s = L(lang);
 
   return (
@@ -26,7 +26,9 @@ export function About() {
         <Heading>{s.s5.providers}</Heading>
         <Body color={colors.inkSoft}>{s.s5.providersBody}</Body>
         <Small color={colors.inkSoft}>
-          vision = {getVisionProviderName()} · tts = {getTtsProviderName()} · {DICTIONARY_TITLE} ({DICTIONARY_COUNT})
+          vision = {effectiveVisionProvider(liveOverlayOn)} (env {getVisionProviderName()}) · tts ={" "}
+          {effectiveTtsProvider(liveOverlayOn)} (env {getTtsProviderName()}) · overlay ={" "}
+          {liveOverlayOn ? "on" : "off"} · {DICTIONARY_TITLE} ({DICTIONARY_COUNT})
         </Small>
       </Card>
 

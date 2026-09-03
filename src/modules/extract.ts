@@ -1,22 +1,18 @@
 // extract module — pluggable VisionProvider (anthropic | minimax | mock).
 //
-// The VisionProvider turns a CaptureResult into structured MedItem[]. reconcile()
-// never sees the model; it only sees these plain items. In this PR the default is the
-// deterministic `mock` provider backed by bundled fixtures. anthropic / minimax adapters
-// are wired and typed but require API keys (added in a later PR) and fall back to mock.
+// Default (overlay off): deterministic `mock` provider + bundled 示範 fixtures.
+// Overlay on: Anthropic vision via the in-repo live server (no client keys).
+// Fixture / simulated captures ALWAYS stay on mock so 示範 works with no keys.
+// Live OCR failure → [] and the screen steers the user back to 示範.
 
 import type { CaptureResult, MedItem } from "./types";
 import { SAMPLE_FIXTURES } from "./samples";
-import {
-  getVisionProviderName,
-  hasVisionKeys,
-  keys,
-  type VisionProviderName,
-} from "./config";
+import { isLiveApiConfigured, type VisionProviderName } from "./config";
+import { postLiveOcr } from "./liveClient";
 
 export interface VisionProvider {
   name: VisionProviderName;
-  /** True when this provider can actually run (has keys etc.). */
+  /** True when this provider can actually run (has a live URL etc.). */
   ready: boolean;
   extract(capture: CaptureResult): Promise<MedItem[]>;
 }
@@ -36,54 +32,52 @@ export const mockVisionProvider: VisionProvider = {
   },
 };
 
-// ---- anthropic provider (Claude vision) ------------------------------------
-// Structure only; performs the request when a key is present. Left unused by default.
+function isDemoCapture(capture: CaptureResult): boolean {
+  return Boolean(capture.simulated || capture.fixtureKey);
+}
+
+// ---- anthropic provider (Claude vision via the live server) ----------------
 
 export function createAnthropicVisionProvider(): VisionProvider {
   return {
     name: "anthropic",
-    ready: hasVisionKeys("anthropic"),
+    ready: isLiveApiConfigured(),
     async extract(capture: CaptureResult): Promise<MedItem[]> {
-      const apiKey = keys.anthropic();
-      if (!apiKey || !capture.uri) return [];
-      // Wiring for a later PR: read image bytes, POST to Anthropic Messages API with
-      // a strict "list medicine names + strengths only" instruction, then parse JSON
-      // into MedItem[]. Kept minimal here so no un-keyed network call ever happens.
-      throw new Error("anthropic vision provider not fully enabled in this build");
+      if (isDemoCapture(capture)) {
+        return mockVisionProvider.extract(capture);
+      }
+      if (!isLiveApiConfigured() || !capture.imageBase64) return [];
+      const items = await postLiveOcr({
+        imageBase64: capture.imageBase64,
+        source: capture.source,
+        mediaType: "image/jpeg",
+      });
+      return items ?? [];
     },
   };
 }
 
-// ---- minimax provider ------------------------------------------------------
+// ---- minimax provider (vision not offered on the live server) --------------
 
 export function createMiniMaxVisionProvider(): VisionProvider {
   return {
     name: "minimax",
-    ready: hasVisionKeys("minimax"),
+    ready: false,
     async extract(capture: CaptureResult): Promise<MedItem[]> {
-      const apiKey = keys.minimax();
-      if (!apiKey || !capture.uri) return [];
-      throw new Error("minimax vision provider not fully enabled in this build");
+      if (isDemoCapture(capture)) return mockVisionProvider.extract(capture);
+      return [];
     },
   };
 }
 
 // ---- factory ---------------------------------------------------------------
 
-let cached: VisionProvider | null = null;
-
-export function getVisionProvider(): VisionProvider {
-  if (cached) return cached;
-  const name = getVisionProviderName();
-  let provider: VisionProvider;
-  if (name === "anthropic") provider = createAnthropicVisionProvider();
-  else if (name === "minimax") provider = createMiniMaxVisionProvider();
-  else provider = mockVisionProvider;
-  // Fall back to mock if the configured provider has no keys.
-  cached = provider.ready ? provider : mockVisionProvider;
-  return cached;
+export function getVisionProvider(overlayOn = false): VisionProvider {
+  if (!overlayOn) return mockVisionProvider;
+  const live = createAnthropicVisionProvider();
+  return live.ready ? live : mockVisionProvider;
 }
 
 export function resetVisionProviderCache(): void {
-  cached = null;
+  // Providers are created per call; kept so existing tests / callers stay valid.
 }

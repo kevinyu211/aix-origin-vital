@@ -17,10 +17,11 @@ anything**.
 - `expo-camera` for capture.
 - Pluggable **`VisionProvider`** (`anthropic` | `minimax` | `mock`). Default `mock`.
 - Hand-curated local dictionary at **`/dictionary/drugs.json`** (no network lookups).
-- **MiniMax T2A** for Cantonese voice with **`expo-speech` fallback** (this PR ships expo-speech;
-  MiniMax adapter wired but disabled until keys exist).
-- **No backend. No accounts. No Clerk/Convex/Supabase.** No persistence beyond the session
-  (except the bundled samples).
+- **MiniMax T2A** for Cantonese voice with **`expo-speech` fallback**. Overlay on → T2A via the
+  local server; overlay off / failure → expo-speech. Keys never enter the Expo app.
+- **No Clerk/Convex/Supabase.** No accounts. No persistence beyond the session
+  (except the bundled samples). An optional in-repo live server (`/server`) holds Anthropic /
+  MiniMax keys for the opt-in overlay; 示範 stays keyless.
 
 ## Language & tone rules
 

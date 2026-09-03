@@ -54,7 +54,8 @@ function PathCard({
 }
 
 export function Home() {
-  const { lang, toggleLang, voiceOn, toggleVoice, fontScale, toggleFontScale, goTo } = useApp();
+  const { lang, toggleLang, voiceOn, toggleVoice, liveOverlayOn, toggleLiveOverlay, fontScale, toggleFontScale, goTo } =
+    useApp();
   const s = L(lang);
 
   return (
@@ -107,6 +108,12 @@ export function Home() {
         label={`${s.s0.voiceToggle}（${voiceOn ? s.s0.voiceOn : s.s0.voiceOff}）`}
         onToggle={toggleVoice}
       />
+      <Toggle
+        value={liveOverlayOn}
+        label={`${s.s0.overlayToggle}（${liveOverlayOn ? s.s0.overlayOn : s.s0.overlayOff}）`}
+        onToggle={toggleLiveOverlay}
+      />
+      {liveOverlayOn ? <Small color={colors.inkSoft}>{s.s0.overlayHint}</Small> : null}
 
       <DisclaimerFooter />
     </Screen>

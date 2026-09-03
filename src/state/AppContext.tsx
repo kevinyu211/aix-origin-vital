@@ -23,6 +23,7 @@ interface AppState {
   lang: Lang;
   fontScale: FontScale;
   voiceOn: boolean;
+  liveOverlayOn: boolean;
   consented: boolean;
   screen: ScreenId;
   sheetItems: MedItem[];
@@ -36,6 +37,7 @@ interface AppContextValue extends AppState {
   setFontScale: (s: FontScale) => void;
   toggleFontScale: () => void;
   toggleVoice: () => void;
+  toggleLiveOverlay: () => void;
   setConsented: (v: boolean) => void;
   goTo: (s: ScreenId) => void;
   setSheetItems: (items: MedItem[]) => void;
@@ -54,6 +56,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Lang>("zh-HK");
   const [fontScale, setFontScale] = useState<FontScale>("large");
   const [voiceOn, setVoiceOn] = useState<boolean>(false);
+  const [liveOverlayOn, setLiveOverlayOn] = useState<boolean>(false);
   const [consented, setConsented] = useState<boolean>(false);
   const [screen, setScreen] = useState<ScreenId>("HOME");
   const [sheetItems, setSheetItemsState] = useState<MedItem[]>([]);
@@ -65,18 +68,19 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const speak = useCallback(
     (text: string) => {
       if (!voiceOn) return;
-      void getTtsProvider().speak(text, lang);
+      void getTtsProvider(liveOverlayOn).speak(text, lang);
     },
-    [voiceOn, lang],
+    [voiceOn, lang, liveOverlayOn],
   );
 
-  const stopSpeak = useCallback(() => getTtsProvider().stop(), []);
+  const stopSpeak = useCallback(() => getTtsProvider(liveOverlayOn).stop(), [liveOverlayOn]);
 
   const value = useMemo<AppContextValue>(
     () => ({
       lang,
       fontScale,
       voiceOn,
+      liveOverlayOn,
       consented,
       screen,
       sheetItems,
@@ -90,6 +94,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       setFontScale,
       toggleFontScale: () => setFontScale((p) => (p === "large" ? "normal" : "large")),
       toggleVoice: () => setVoiceOn((p) => !p),
+      toggleLiveOverlay: () => setLiveOverlayOn((p) => !p),
       setConsented,
       goTo: setScreen,
       setSheetItems: setSheetItemsState,
@@ -103,7 +108,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       speak,
       stopSpeak,
     }),
-    [lang, fontScale, voiceOn, consented, screen, sheetItems, boxItems, refusal, result, speak, stopSpeak],
+    [lang, fontScale, voiceOn, liveOverlayOn, consented, screen, sheetItems, boxItems, refusal, result, speak, stopSpeak],
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

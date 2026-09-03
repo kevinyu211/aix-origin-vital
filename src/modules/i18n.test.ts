@@ -21,6 +21,8 @@ describe("i18n — three languages are wired up", () => {
       expect(typeof s.s0.consent).toBe("string");
       expect(typeof s.home.sopcTitle).toBe("string");
       expect(typeof s.sopc.timeNote).toBe("string");
+      expect(typeof s.s0.overlayToggle).toBe("string");
+      expect(s.s0.overlayToggle.length).toBeGreaterThan(0);
     }
   });
 
@@ -50,6 +52,7 @@ describe("i18n — zh-CN is natural simplified, not a Cantonese char-copy", () =
     expect(zhCN.common.close).toBe("关闭");
     expect(zhCN.s0.language).toBe("语言");
     expect(zhCN.s0.voiceToggle).toBe("讲给我听");
+    expect(zhCN.s0.overlayToggle).toBe("现场识别");
     expect(zhCN.s3.new).toBe("药单有、抽屉没见到（新）");
     expect(zhCN.s3.notOnList).toBe("不在你的药单上");
     expect(zhCN.s3.unmatched).toBe("对不上、要问药剂师");

@@ -28,6 +28,8 @@ export function Welcome() {
     setConsented,
     voiceOn,
     toggleVoice,
+    liveOverlayOn,
+    toggleLiveOverlay,
     fontScale,
     toggleFontScale,
     goTo,
@@ -82,6 +84,12 @@ export function Welcome() {
           label={`${s.s0.voiceToggle}（${voiceOn ? s.s0.voiceOn : s.s0.voiceOff}）`}
           onToggle={toggleVoice}
         />
+        <Toggle
+          value={liveOverlayOn}
+          label={`${s.s0.overlayToggle}（${liveOverlayOn ? s.s0.overlayOn : s.s0.overlayOff}）`}
+          onToggle={toggleLiveOverlay}
+        />
+        {liveOverlayOn ? <Small color={colors.inkSoft}>{s.s0.overlayHint}</Small> : null}
         <Toggle value={fontScale === "large"} label={s.s0.largeType} onToggle={toggleFontScale} />
       </Card>
 

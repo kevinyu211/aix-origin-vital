@@ -13,6 +13,11 @@ export function sampleBoxCapture(index: number): CaptureResult {
   return { uri: null, source: "box", fixtureKey: boxFixtureKey(index), simulated: true };
 }
 
-export function photoCapture(uri: string, source: MedSource, simulated: boolean): CaptureResult {
-  return { uri, source, simulated };
+export function photoCapture(
+  uri: string | null,
+  source: MedSource,
+  simulated: boolean,
+  imageBase64?: string,
+): CaptureResult {
+  return { uri, source, simulated, imageBase64 };
 }

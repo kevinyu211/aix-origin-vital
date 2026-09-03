@@ -1,6 +1,6 @@
 // S2 — Scan the boxes (1–8). 「影下一盒」 adds a box, 「影完喇」 moves to the result.
-// In this mock build 「影下一盒」 pulls the next bundled 示範 box so the demo cannot fail;
-// the live camera is shown for realism and routes through the same VisionProvider.
+// 「影下一盒」 pulls the next bundled 示範 box so the demo cannot fail.
+// Overlay on: the live camera goes through server OCR; fixtures stay mock.
 
 import React, { useState } from "react";
 import { View } from "react-native";
@@ -16,26 +16,30 @@ import { SAMPLE_BOXES } from "../modules/samples";
 const MAX_BOXES = 8;
 
 export function ScanBoxes() {
-  const { lang, goTo, boxItems, addBoxItems, speak } = useApp();
+  const { lang, goTo, boxItems, addBoxItems, speak, liveOverlayOn } = useApp();
   const s = L(lang);
   const [note, setNote] = useState<string | null>(null);
+  const failNote = liveOverlayOn ? s.s0.liveFailed : s.s1.couldNotRead;
 
   const addNextSample = async () => {
     const idx = boxItems.length;
     if (idx >= Math.min(MAX_BOXES, SAMPLE_BOXES.length)) return;
-    const items = await getVisionProvider().extract(sampleBoxCapture(idx));
+    // 「影下一盒」 stays on the bundled 示範 fixtures so the demo cannot fail.
+    const items = await getVisionProvider(liveOverlayOn).extract(sampleBoxCapture(idx));
     addBoxItems(items);
     if (items[0]) speak(items[0].name);
   };
 
-  const onPhoto = async (uri: string | null) => {
-    if (!uri) {
-      setNote(s.s1.couldNotRead);
+  const onPhoto = async (photo: { uri: string | null; base64?: string }) => {
+    if (!photo.uri && !photo.base64) {
+      setNote(failNote);
       return;
     }
-    const items = await getVisionProvider().extract(photoCapture(uri, "box", false));
+    const items = await getVisionProvider(liveOverlayOn).extract(
+      photoCapture(photo.uri, "box", false, photo.base64),
+    );
     if (items.length === 0) {
-      setNote(s.s1.couldNotRead);
+      setNote(failNote);
       return;
     }
     addBoxItems(items);
@@ -54,6 +58,7 @@ export function ScanBoxes() {
         shutterLabel={s.s2.shutter}
         permissionText={s.s1.permissionNeeded}
         grantLabel={s.s1.grant}
+        requestBase64={liveOverlayOn}
         onCapture={onPhoto}
       />
 
