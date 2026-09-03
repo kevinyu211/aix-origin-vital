@@ -32,8 +32,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-camera",
-      "expo-sharing"
+      "expo-camera"
     ],
     "extra": {
       "visionProvider": "mock",

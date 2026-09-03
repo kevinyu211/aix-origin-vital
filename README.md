@@ -17,6 +17,8 @@ npm install
 npx expo start        # open in Expo Go (iOS/Android)
 ```
 
+Pinned to **Expo SDK 54** so the public App Store Expo Go client (currently SDK 54 / Expo Go 2.25.x) can open the project. SDK 57 is too new for that store client.
+
 The app now opens on a **home path picker** with two demo paths:
 
 1. **今日去專科門診 — SOPC visit-day voice companion** (new). A HK HA 專科門診 walk for the
