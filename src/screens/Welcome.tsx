@@ -36,7 +36,7 @@ export function Welcome() {
 
   return (
     <Screen>
-      <TopBar />
+      <TopBar onBack={() => goTo("HOME")} />
       <Title>{s.s0.title}</Title>
       <Small color={colors.inkSoft}>{s.tagline}</Small>
 

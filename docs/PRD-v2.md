@@ -113,3 +113,39 @@ Cantonese in all zh-HK strings.
 - MiniMax T2A Cantonese audio (via `expo-av`).
 - Anthropic / MiniMax vision extraction from real photos.
 - Bundled photographic sample images; Noto Sans HK font file.
+
+---
+
+## Second demo path — SOPC visit-day voice companion (added)
+
+A second, independent demo path lives beside 對藥. The app now opens on a **home path picker**
+(new landing) with the verbatim disclaimer visible; picking a path never removes or changes the
+對藥 sheet-vs-drawer flow.
+
+**Scope:** HK Hospital Authority **專科門診 (Specialist Out-patient Clinic, SOPC)**, **visit day
+only**. It is a hospital-walk companion, not a diagnosis or triage tool.
+
+**Screens (one job each):**
+
+| ID | Name | Job |
+| -- | ---- | --- |
+| **HOME** | Path picker | Disclaimer visible; choose 「今日去專科門診」 (SOPC) or 對藥. Voice / language / large-type toggles. |
+| **SOPC S1** | Scan slip | Camera + **「用示範預約紙」** fallback. Teaches: the printed time is the **登記時間, not 見醫生**. Shows the synthetic slip. |
+| **SOPC S2** | Three steps | 粵 voice (`expo-speech`; MiniMax later) reads **exactly three** steps. Reassurance that 15–30 min late = re-register (**slot not killed**). |
+| **SOPC S3** | End on a human | Ends on a human **繳費處／登記處** counter. |
+
+**The three spoken steps (verbatim, written Cantonese, locked in `src/modules/sopc.ts`):**
+
+1. 呢張紙上嘅時間係登記，唔係見醫生。早15分鐘到。
+2. 去自助機或繳費處登記，唔好去舊交票櫃位。
+3. 去呢個專科大堂等。
+
+**Hard "no" list for this path (enforced by `sopc.test.ts`):** never say a late arrival kills the
+slot (late = re-register); **no HA Go** in the voice; **no indoor GPS**; **no A&E**; **no pharmacy**
+on this path; **no diagnosis**. Forbidden advice words stay out of all copy.
+
+**Synthetic slip (`SAMPLE_SLIP`):** PWH-style 專科門診預約紙 — 威爾斯親王醫院, specialty **內科**,
+watermark **示範**, fabricated patient, **登記時間 printed clearly**. No real patient data.
+
+**Stack:** unchanged — Expo (React Native) + TypeScript, no backend, no accounts, no Clerk/Convex.
+Traditional-Chinese written Cantonese with an English toggle.
