@@ -11,12 +11,15 @@ export function CameraCapture({
   shutterLabel,
   permissionText,
   grantLabel,
+  requestBase64 = false,
   onCapture,
 }: {
   shutterLabel: string;
   permissionText: string;
   grantLabel: string;
-  onCapture: (uri: string | null) => void;
+  /** When true, include JPEG base64 for the live OCR server. Demo path leaves this off. */
+  requestBase64?: boolean;
+  onCapture: (photo: { uri: string | null; base64?: string }) => void;
 }) {
   const [permission, requestPermission] = useCameraPermissions();
   const ref = useRef<CameraView | null>(null);
@@ -37,10 +40,14 @@ export function CameraCapture({
 
   const take = async () => {
     try {
-      const photo = await ref.current?.takePictureAsync?.({ quality: 0.5, skipProcessing: true });
-      onCapture(photo?.uri ?? null);
+      const photo = await ref.current?.takePictureAsync?.({
+        quality: 0.5,
+        skipProcessing: true,
+        base64: requestBase64,
+      });
+      onCapture({ uri: photo?.uri ?? null, base64: photo?.base64 });
     } catch {
-      onCapture(null);
+      onCapture({ uri: null });
     }
   };
 

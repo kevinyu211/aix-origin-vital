@@ -28,6 +28,11 @@ export interface Strings {
     largeType: string;
     voiceOn: string;
     voiceOff: string;
+    overlayToggle: string;
+    overlayOn: string;
+    overlayOff: string;
+    overlayHint: string;
+    liveFailed: string;
   };
   s1: {
     title: string;
@@ -156,6 +161,11 @@ const zhHK: Strings = {
     largeType: "老友記大字",
     voiceOn: "已開",
     voiceOff: "未開",
+    overlayToggle: "現場辨識",
+    overlayOn: "已開",
+    overlayOff: "未開",
+    overlayHint: "開咗會用現場相機讀藥名，同用粵語朗讀。讀唔到就用示範。示範唔使密鑰。",
+    liveFailed: "現場辨識而家用唔到。請按「用示範藥單」。",
   },
   s1: {
     title: "第一步：影藥單",
@@ -209,10 +219,10 @@ const zhHK: Strings = {
       "讀藥單同藥盒名嗰步係靠 AI 視覺模型（示範模式用固定假資料）。分組同對照嗰步係固定規則計出嚟，同一份輸入永遠得出同一個結果，唔靠 AI。",
     providers: "供應商",
     providersBody:
-      "視覺：anthropic / minimax / mock（示範用 mock）。語音：MiniMax T2A 廣東話，設備語音做後備。",
+      "視覺：示範用 mock。現場辨識開啟時經本機伺服器做 Anthropic OCR。語音：MiniMax T2A 廣東話經伺服器，設備語音做後備。密鑰只放喺伺服器。",
     crossBorder: "跨境資料",
     crossBorderBody:
-      "示範模式唔會傳任何資料出去。當開啟真實 AI 供應商時，相片內容會傳去該供應商處理，請只用假／示範資料。",
+      "示範模式唔會傳任何資料出去。開啟現場辨識時，相會經本機伺服器傳去 Anthropic 處理，請只用假／示範資料。",
   },
   s6: {
     title: "呢個問題想問專業人士",
@@ -289,6 +299,12 @@ const en: Strings = {
     largeType: "Large type",
     voiceOn: "On",
     voiceOff: "Off",
+    overlayToggle: "Live overlay",
+    overlayOn: "On",
+    overlayOff: "Off",
+    overlayHint:
+      "When on, the camera reads names live and speech goes through the server. If that fails, use the demo path. Demo needs no keys.",
+    liveFailed: "Live overlay is unavailable. Please tap “Use the demo sheet”.",
   },
   s1: {
     title: "Step 1: Photo of the sheet",
@@ -342,10 +358,10 @@ const en: Strings = {
       "Reading names off the sheet and boxes uses an AI vision model (fixed fake data in demo mode). Grouping and comparison run on fixed rules — the same input always gives the same result and never uses AI.",
     providers: "Providers",
     providersBody:
-      "Vision: anthropic / minimax / mock (demo uses mock). Voice: MiniMax T2A Cantonese, with device speech as fallback.",
+      "Vision: mock for demo. Live overlay sends photos to the local server for Anthropic OCR. Voice: MiniMax T2A via the server, device speech as fallback. Keys stay on the server.",
     crossBorder: "Cross-border data",
     crossBorderBody:
-      "Demo mode sends nothing out. With a real AI provider on, photo content is sent to that provider — please use fake / demo data only.",
+      "Demo mode sends nothing out. With live overlay on, photos go through the local server to Anthropic — please use fake / demo data only.",
   },
   s6: {
     title: "This one is for a professional",
@@ -425,6 +441,11 @@ const zhCN: Strings = {
     largeType: "老友记大字",
     voiceOn: "已开",
     voiceOff: "未开",
+    overlayToggle: "现场识别",
+    overlayOn: "已开",
+    overlayOff: "未开",
+    overlayHint: "打开后会用现场相机读药名，并用语音朗读。读不到就用示范。示范不需要密钥。",
+    liveFailed: "现场识别现在用不了。请按「用示范药单」。",
   },
   s1: {
     title: "第一步：拍药单",
@@ -478,10 +499,10 @@ const zhCN: Strings = {
       "读药单和药盒名那一步靠 AI 视觉模型（示范模式用固定假资料）。分组和对照那一步是固定规则算出来的，同一份输入永远得出同一个结果，不靠 AI。",
     providers: "供应商",
     providersBody:
-      "视觉：anthropic / minimax / mock（示范用 mock）。语音：MiniMax T2A 普通话，设备语音做后备。",
+      "视觉：示范用 mock。现场识别开启时经本机服务器做 Anthropic OCR。语音：MiniMax T2A 普通话经服务器，设备语音做后备。密钥只放在服务器。",
     crossBorder: "跨境资料",
     crossBorderBody:
-      "示范模式不会传任何资料出去。开启真实 AI 供应商时，照片内容会传去该供应商处理，请只用假／示范资料。",
+      "示范模式不会传任何资料出去。开启现场识别时，照片会经本机服务器传去 Anthropic 处理，请只用假／示范资料。",
   },
   s6: {
     title: "这个问题想问专业人士",

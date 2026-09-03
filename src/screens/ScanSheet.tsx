@@ -11,25 +11,29 @@ import { getVisionProvider } from "../modules/extract";
 import { SAMPLE_SHEET } from "../modules/samples";
 
 export function ScanSheet() {
-  const { lang, goTo, setSheetItems, speak } = useApp();
+  const { lang, goTo, setSheetItems, speak, liveOverlayOn } = useApp();
   const s = L(lang);
   const [note, setNote] = useState<string | null>(null);
+  const failNote = liveOverlayOn ? s.s0.liveFailed : s.s1.couldNotRead;
 
   const useSample = async () => {
-    const items = await getVisionProvider().extract(sampleSheetCapture());
+    // 示範 always goes through the mock fixture path, even when overlay is on.
+    const items = await getVisionProvider(liveOverlayOn).extract(sampleSheetCapture());
     setSheetItems(items.length ? items : SAMPLE_SHEET);
     speak(s.s1.captured);
     goTo("S2");
   };
 
-  const onPhoto = async (uri: string | null) => {
-    if (!uri) {
-      setNote(s.s1.couldNotRead);
+  const onPhoto = async (photo: { uri: string | null; base64?: string }) => {
+    if (!photo.uri && !photo.base64) {
+      setNote(failNote);
       return;
     }
-    const items = await getVisionProvider().extract(photoCapture(uri, "sheet", false));
+    const items = await getVisionProvider(liveOverlayOn).extract(
+      photoCapture(photo.uri, "sheet", false, photo.base64),
+    );
     if (items.length === 0) {
-      setNote(s.s1.couldNotRead);
+      setNote(failNote);
       return;
     }
     setSheetItems(items);
@@ -47,6 +51,7 @@ export function ScanSheet() {
         shutterLabel={s.s1.shutter}
         permissionText={s.s1.permissionNeeded}
         grantLabel={s.s1.grant}
+        requestBase64={liveOverlayOn}
         onCapture={onPhoto}
       />
 

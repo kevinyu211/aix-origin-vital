@@ -36,7 +36,8 @@
     ],
     "extra": {
       "visionProvider": "mock",
-      "ttsProvider": "expo-speech"
+      "ttsProvider": "expo-speech",
+      "liveApiUrl": ""
     }
   }
 }

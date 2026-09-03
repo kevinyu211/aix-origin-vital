@@ -19,6 +19,8 @@ npx expo start        # open in Expo Go (iOS/Android)
 
 Pinned to **Expo SDK 54** so the public App Store Expo Go client (currently SDK 54 / Expo Go 2.25.x) can open the project. SDK 57 is too new for that store client.
 
+Expo Go QR (tunnel) remains **`exp://ahqji2e-anonymous-8081.exp.direct`**. Open it in the App Store Expo Go client. **Never sideload** a custom build.
+
 The app now opens on a **home path picker** with two demo paths:
 
 1. **今日去專科門診 — SOPC visit-day voice companion** (new). A HK HA 專科門診 walk for the
@@ -44,16 +46,45 @@ npm run typecheck
 
 ## Stack
 
-- Expo (React Native) + TypeScript — no web/Next.js, no backend, no accounts.
-- `expo-camera`, `expo-speech`, `expo-sharing`, `react-native-view-shot`.
-- Pluggable `VisionProvider` (`anthropic` | `minimax` | `mock`, default `mock`).
+- Expo (React Native) + TypeScript — no Clerk / Convex / Supabase. Product paths stay on-device.
+- `expo-camera`, `expo-speech`, `expo-sharing`, `react-native-view-shot`, `expo-av` (overlay TTS playback).
+- Pluggable `VisionProvider` (`anthropic` | `minimax` | `mock`, default `mock`). 示範 always uses mock.
+- Optional in-repo live server (`/server`) for overlay OCR + MiniMax T2A. Keys stay on the server.
 - `drugs.json` at repo root = Cindy's 60 INN source. `dictionary/drugs.json` = mapped DrugEntry[] (aliases include HA labels like PARACETAMOL TAB 500MG). Matcher: inn / inn_zh / also / brands.
 - Pure, deterministic `reconcile` module (same input ⇒ identical output).
 
 ## Providers / keys
 
-Demo mode needs no keys. To enable real providers later, set `EXPO_PUBLIC_*` env vars (see
-[`.env.example`](.env.example)). **Never commit secrets.**
+**示範 / sample / demo needs no keys.** Default stays `EXPO_PUBLIC_VISION_PROVIDER=mock` and
+device `expo-speech`. The in-app **現場辨識 / Live overlay** toggle is opt-in: same screens, but
+camera photos go to the local server (Anthropic vision) and speech goes to MiniMax T2A via that
+server, with expo-speech fallback. If live OCR/TTS dies, the app degrades and tells you to use 示範.
+
+API keys are **server-only**. Never `EXPO_PUBLIC_*` secrets, never commit `.env`, never paste keys
+into the app, PRs, or logs. See [`.env.example`](.env.example) (empty placeholders only).
+
+## Live overlay server (local)
+
+Tiny Node/TypeScript HTTP server. The Expo app never sees `ANTHROPIC_API_KEY` / `MINIMAX_API_KEY`.
+
+```bash
+# Terminal 1 — keys stay here (copy placeholders, fill locally, never commit)
+#   ANTHROPIC_API_KEY=
+#   MINIMAX_API_KEY=
+#   MINIMAX_GROUP_ID=          # optional
+npm run server                # default http://0.0.0.0:8787
+
+# Terminal 2 — Expo Go (SDK 54). Leave vision=mock. Overlay toggle is in the app.
+# For a physical phone, point this at a URL the phone can reach (LAN or tunnel):
+#   EXPO_PUBLIC_LIVE_API_URL=http://192.168.x.x:8787
+npx expo start --tunnel
+```
+
+- `GET /health` → `{ ok: true }`
+- `POST /ocr` `{ imageBase64, source }` → `{ items: MedItem[] }` (or HTTP 503 if the key is missing)
+- `POST /tts` `{ text, locale }` → `{ audioBase64, mime }` (or HTTP 503; app then uses expo-speech)
+
+Missing keys return a generic `live service unavailable` so 示範 still works.
 
 ## Docs
 

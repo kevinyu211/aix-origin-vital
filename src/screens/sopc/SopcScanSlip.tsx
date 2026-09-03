@@ -31,8 +31,8 @@ export function SopcScanSlip() {
     goTo("SOPC_S2");
   };
 
-  const onPhoto = (uri: string | null) => {
-    // Demo mode does not read real slips — steer to the bundled 示範 slip.
+  const onPhoto = (photo: { uri: string | null; base64?: string }) => {
+    // SOPC slip OCR is not a medicine extract — steer to the bundled 示範 slip.
     setNote(
       lang === "en"
         ? "This is demo mode and can't read a real slip. Please tap “Use the demo slip”."
@@ -40,7 +40,7 @@ export function SopcScanSlip() {
           ? "现在是示范模式，读不到真的预约纸。请按「用示范预约纸」。"
           : "而家係示範模式，讀唔到真嘅預約紙。請按「用示範預約紙」。",
     );
-    void uri;
+    void photo;
   };
 
   return (

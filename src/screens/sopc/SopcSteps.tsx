@@ -1,5 +1,5 @@
-// SOPC S2 — the three spoken steps. 粵 voice reads exactly three steps (expo-speech now,
-// MiniMax later). It never says a 15–30 min late arrival kills the slot — late is
+// SOPC S2 — the three spoken steps. 粵 voice reads exactly three steps (expo-speech, or
+// MiniMax via the live server when overlay is on). It never says a 15–30 min late arrival kills the slot — late is
 // re-register, shown as a reassurance card, not one of the three core steps.
 
 import React, { useEffect } from "react";

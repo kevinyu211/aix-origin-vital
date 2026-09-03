@@ -109,4 +109,6 @@ export interface CaptureResult {
   /** When set, the mock VisionProvider returns the matching bundled fixture. */
   fixtureKey?: string;
   simulated: boolean;
+  /** JPEG/PNG base64 for the live OCR server. Never logged. Demo fixtures omit this. */
+  imageBase64?: string;
 }
