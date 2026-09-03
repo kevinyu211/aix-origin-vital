@@ -14,8 +14,27 @@ import type { Lang } from "./types";
 export const DISCLAIMER =
   "本工具僅供健康信息參考與支持，不構成醫療建議，不能取代專業醫護人員的診斷或治療。如有健康疑慮，請諮詢註冊醫生或相關專業人士。AI 生成內容可能不準確。";
 
+// Simplified-character (zh-CN) disclaimer — same meaning as DISCLAIMER. It also quotes
+// 诊断/治疗 only to describe what the tool does NOT do; this is the ONLY allowed place.
+export const DISCLAIMER_ZH_CN =
+  "本工具仅供健康信息参考与支持，不构成医疗建议，不能取代专业医护人员的诊断或治疗。如有健康疑虑，请咨询注册医生或相关专业人士。AI 生成内容可能不准确。";
+
 export const CONSENT =
   "呢個係示範版。請只用假嘅／示範嘅藥單同藥盒。唔好影真人嘅資料。";
+
+// Simplified-character (zh-CN) consent — same meaning as CONSENT (Mandarin phrasing).
+export const CONSENT_ZH_CN =
+  "这是示范版。请只用假的／示范的药单和药盒。不要拍真人资料。";
+
+/** Single source for the disclaimer per language. i18n must go through this. */
+export function disclaimerFor(lang: Lang): string {
+  return lang === "zh-CN" ? DISCLAIMER_ZH_CN : DISCLAIMER;
+}
+
+/** Single source for the simulated-data consent per language. i18n must go through this. */
+export function consentFor(lang: Lang): string {
+  return lang === "zh-CN" ? CONSENT_ZH_CN : CONSENT;
+}
 
 // Words that must never appear as instructions/advice in generated or hand-off content.
 export const FORBIDDEN_ADVICE_WORDS = [
@@ -55,6 +74,23 @@ const REFUSAL_KEYWORDS = [
   "診斷",
   "治療",
   "斷症",
+  // zh-CN (simplified, Mandarin phrasing)
+  "应不应该",
+  "要不要",
+  "停不停",
+  "能停吗",
+  "可以停",
+  "加药",
+  "减药",
+  "吃不吃",
+  "吃多少",
+  "多少粒",
+  "剂量",
+  "换药",
+  "一起吃",
+  "断症",
+  "诊断",
+  "治疗",
   // en
   "should i",
   "can i stop",
@@ -95,6 +131,13 @@ export function buildRefusal(lang: Lang): string {
       "Sorry — I can't tell you whether to take, add, reduce or stop any medicine. " +
       "I can only help you compare the names and information on your sheet and boxes. " +
       "Please ask your pharmacist or a registered doctor about this."
+    );
+  }
+  if (lang === "zh-CN") {
+    return (
+      "对不起，我不能告诉你应不应该吃、加、减或者停哪一种药。" +
+      "我只能帮你对照药单和药盒上面的资料。" +
+      "这些问题，最好问一下你的药剂师或者注册医生。"
     );
   }
   return (

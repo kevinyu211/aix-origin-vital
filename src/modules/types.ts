@@ -1,7 +1,7 @@
 // Shared types for the 對藥 (DoYeuk / Discharge Medicine Check) pipeline.
 // These types are intentionally UI-free so every module can be unit-tested in isolation.
 
-export type Lang = "zh-HK" | "en";
+export type Lang = "zh-HK" | "zh-CN" | "en";
 
 /** One brand row from Cindy's source vocab (`drugs.json` at repo root). */
 export interface DrugBrand {
