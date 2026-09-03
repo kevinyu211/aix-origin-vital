@@ -1,0 +1,346 @@
+{
+  "version": "2026-09-03",
+  "note": "Hand-curated demo dictionary of common HK discharge medicines. info_* fields are label-style reference text only. They are NOT instructions and never tell anyone to start, stop, add or reduce anything.",
+  "drugs": [
+    {
+      "id": "paracetamol",
+      "activeIngredient": "paracetamol",
+      "brands": ["Panadol", "必理痛", "Tylenol"],
+      "aliases": ["acetaminophen", "撲熱息痛", "退燒止痛"],
+      "classHint": "止痛退燒",
+      "commonStrengths": ["500mg", "650mg"],
+      "info_zh": "撲熱息痛（Paracetamol）係常見嘅止痛退燒成分，好多唔同牌子嘅成藥都會含有。",
+      "info_en": "Paracetamol (acetaminophen) is a common pain and fever ingredient found in many brands."
+    },
+    {
+      "id": "amlodipine",
+      "activeIngredient": "amlodipine",
+      "brands": ["Norvasc", "脈優"],
+      "aliases": ["amlodipine besylate", "氨氯地平"],
+      "classHint": "降血壓（鈣通道）",
+      "commonStrengths": ["5mg", "10mg"],
+      "info_zh": "Amlodipine 屬於鈣通道類別嘅降血壓成分，資料上常見於血壓相關嘅藥物。",
+      "info_en": "Amlodipine is a calcium-channel blocker commonly listed for blood-pressure related medicines."
+    },
+    {
+      "id": "aspirin",
+      "activeIngredient": "aspirin",
+      "brands": ["Aspirin", "阿士匹靈", "Aspizol"],
+      "aliases": ["acetylsalicylic acid", "ASA", "亞士匹靈"],
+      "classHint": "薄血 / 止痛",
+      "commonStrengths": ["80mg", "100mg", "300mg"],
+      "info_zh": "Aspirin（阿士匹靈）低劑量常見於薄血相關資料，高劑量常見於止痛資料。",
+      "info_en": "Aspirin appears in antiplatelet reference info at low dose and pain reference info at higher dose."
+    },
+    {
+      "id": "atorvastatin",
+      "activeIngredient": "atorvastatin",
+      "brands": ["Lipitor", "立普妥"],
+      "aliases": ["atorvastatin calcium", "阿托伐他汀"],
+      "classHint": "降膽固醇（他汀）",
+      "commonStrengths": ["10mg", "20mg", "40mg", "80mg"],
+      "info_zh": "Atorvastatin 屬於他汀類（statin）嘅降膽固醇成分。",
+      "info_en": "Atorvastatin is a statin listed for cholesterol-related medicines."
+    },
+    {
+      "id": "metformin",
+      "activeIngredient": "metformin",
+      "brands": ["Glucophage", "Glucophage XR", "甲福明"],
+      "aliases": ["metformin hydrochloride", "二甲雙胍", "糖尿福"],
+      "classHint": "降血糖",
+      "commonStrengths": ["250mg", "500mg", "850mg", "1000mg"],
+      "info_zh": "Metformin 係常見嘅降血糖成分，資料上多數同血糖管理有關。",
+      "info_en": "Metformin is a common ingredient listed for blood-sugar related medicines."
+    },
+    {
+      "id": "simvastatin",
+      "activeIngredient": "simvastatin",
+      "brands": ["Zocor", "舒降之"],
+      "aliases": ["辛伐他汀"],
+      "classHint": "降膽固醇（他汀）",
+      "commonStrengths": ["10mg", "20mg", "40mg"],
+      "info_zh": "Simvastatin 屬於他汀類嘅降膽固醇成分。",
+      "info_en": "Simvastatin is a statin listed for cholesterol-related medicines."
+    },
+    {
+      "id": "rosuvastatin",
+      "activeIngredient": "rosuvastatin",
+      "brands": ["Crestor", "冠脂妥"],
+      "aliases": ["瑞舒伐他汀"],
+      "classHint": "降膽固醇（他汀）",
+      "commonStrengths": ["5mg", "10mg", "20mg"],
+      "info_zh": "Rosuvastatin 屬於他汀類嘅降膽固醇成分。",
+      "info_en": "Rosuvastatin is a statin listed for cholesterol-related medicines."
+    },
+    {
+      "id": "lisinopril",
+      "activeIngredient": "lisinopril",
+      "brands": ["Zestril"],
+      "aliases": ["賴諾普利"],
+      "classHint": "降血壓（ACE）",
+      "commonStrengths": ["5mg", "10mg", "20mg"],
+      "info_zh": "Lisinopril 屬於 ACE 類別嘅降血壓成分。",
+      "info_en": "Lisinopril is an ACE inhibitor listed for blood-pressure related medicines."
+    },
+    {
+      "id": "ramipril",
+      "activeIngredient": "ramipril",
+      "brands": ["Tritace"],
+      "aliases": ["雷米普利"],
+      "classHint": "降血壓（ACE）",
+      "commonStrengths": ["2.5mg", "5mg", "10mg"],
+      "info_zh": "Ramipril 屬於 ACE 類別嘅降血壓成分。",
+      "info_en": "Ramipril is an ACE inhibitor listed for blood-pressure related medicines."
+    },
+    {
+      "id": "losartan",
+      "activeIngredient": "losartan",
+      "brands": ["Cozaar", "科素亞"],
+      "aliases": ["losartan potassium", "氯沙坦"],
+      "classHint": "降血壓（ARB）",
+      "commonStrengths": ["25mg", "50mg", "100mg"],
+      "info_zh": "Losartan 屬於 ARB 類別嘅降血壓成分。",
+      "info_en": "Losartan is an ARB listed for blood-pressure related medicines."
+    },
+    {
+      "id": "candesartan",
+      "activeIngredient": "candesartan",
+      "brands": ["Atacand"],
+      "aliases": ["坎地沙坦"],
+      "classHint": "降血壓（ARB）",
+      "commonStrengths": ["4mg", "8mg", "16mg"],
+      "info_zh": "Candesartan 屬於 ARB 類別嘅降血壓成分。",
+      "info_en": "Candesartan is an ARB listed for blood-pressure related medicines."
+    },
+    {
+      "id": "bisoprolol",
+      "activeIngredient": "bisoprolol",
+      "brands": ["Concor", "康肯"],
+      "aliases": ["比索洛爾"],
+      "classHint": "降血壓 / 心跳（乙型阻斷）",
+      "commonStrengths": ["1.25mg", "2.5mg", "5mg", "10mg"],
+      "info_zh": "Bisoprolol 屬於乙型阻斷（beta-blocker）類別嘅成分。",
+      "info_en": "Bisoprolol is a beta-blocker listed for heart and blood-pressure related medicines."
+    },
+    {
+      "id": "metoprolol",
+      "activeIngredient": "metoprolol",
+      "brands": ["Betaloc", "Lopressor"],
+      "aliases": ["美托洛爾"],
+      "classHint": "降血壓 / 心跳（乙型阻斷）",
+      "commonStrengths": ["25mg", "50mg", "100mg"],
+      "info_zh": "Metoprolol 屬於乙型阻斷類別嘅成分。",
+      "info_en": "Metoprolol is a beta-blocker listed for heart and blood-pressure related medicines."
+    },
+    {
+      "id": "hydrochlorothiazide",
+      "activeIngredient": "hydrochlorothiazide",
+      "brands": ["Esidrex"],
+      "aliases": ["HCTZ", "氫氯噻嗪"],
+      "classHint": "去水（利尿）",
+      "commonStrengths": ["12.5mg", "25mg"],
+      "info_zh": "Hydrochlorothiazide 屬於利尿（去水）類別嘅成分。",
+      "info_en": "Hydrochlorothiazide is a thiazide diuretic listed in fluid-related medicines."
+    },
+    {
+      "id": "furosemide",
+      "activeIngredient": "furosemide",
+      "brands": ["Lasix", "利尿劑"],
+      "aliases": ["frusemide", "呋塞米"],
+      "classHint": "去水（利尿）",
+      "commonStrengths": ["20mg", "40mg"],
+      "info_zh": "Furosemide 屬於利尿（去水）類別嘅成分。",
+      "info_en": "Furosemide is a loop diuretic listed in fluid-related medicines."
+    },
+    {
+      "id": "spironolactone",
+      "activeIngredient": "spironolactone",
+      "brands": ["Aldactone"],
+      "aliases": ["螺內酯"],
+      "classHint": "去水（利尿）",
+      "commonStrengths": ["25mg", "50mg"],
+      "info_zh": "Spironolactone 屬於保鉀利尿類別嘅成分。",
+      "info_en": "Spironolactone is a potassium-sparing diuretic listed in fluid-related medicines."
+    },
+    {
+      "id": "warfarin",
+      "activeIngredient": "warfarin",
+      "brands": ["Marevan", "華法林"],
+      "aliases": ["warfarin sodium"],
+      "classHint": "薄血（抗凝）",
+      "commonStrengths": ["1mg", "3mg", "5mg"],
+      "info_zh": "Warfarin 屬於抗凝（薄血）類別嘅成分，資料上通常需要定期驗血。",
+      "info_en": "Warfarin is an anticoagulant listed in blood-thinning related medicines."
+    },
+    {
+      "id": "clopidogrel",
+      "activeIngredient": "clopidogrel",
+      "brands": ["Plavix", "波立維"],
+      "aliases": ["氯吡格雷"],
+      "classHint": "薄血（抗血小板）",
+      "commonStrengths": ["75mg"],
+      "info_zh": "Clopidogrel 屬於抗血小板（薄血）類別嘅成分。",
+      "info_en": "Clopidogrel is an antiplatelet listed in blood-thinning related medicines."
+    },
+    {
+      "id": "omeprazole",
+      "activeIngredient": "omeprazole",
+      "brands": ["Losec"],
+      "aliases": ["奧美拉唑"],
+      "classHint": "胃酸（PPI）",
+      "commonStrengths": ["10mg", "20mg", "40mg"],
+      "info_zh": "Omeprazole 屬於質子泵抑制（PPI）類別，資料上同胃酸有關。",
+      "info_en": "Omeprazole is a proton-pump inhibitor listed in stomach-acid related medicines."
+    },
+    {
+      "id": "pantoprazole",
+      "activeIngredient": "pantoprazole",
+      "brands": ["Controloc", "Pantoloc"],
+      "aliases": ["泮托拉唑"],
+      "classHint": "胃酸（PPI）",
+      "commonStrengths": ["20mg", "40mg"],
+      "info_zh": "Pantoprazole 屬於質子泵抑制（PPI）類別，資料上同胃酸有關。",
+      "info_en": "Pantoprazole is a proton-pump inhibitor listed in stomach-acid related medicines."
+    },
+    {
+      "id": "famotidine",
+      "activeIngredient": "famotidine",
+      "brands": ["Pepcidine", "Pepcid"],
+      "aliases": ["法莫替丁"],
+      "classHint": "胃酸（H2）",
+      "commonStrengths": ["20mg", "40mg"],
+      "info_zh": "Famotidine 屬於 H2 類別，資料上同胃酸有關。",
+      "info_en": "Famotidine is an H2 blocker listed in stomach-acid related medicines."
+    },
+    {
+      "id": "gliclazide",
+      "activeIngredient": "gliclazide",
+      "brands": ["Diamicron", "Diamicron MR"],
+      "aliases": ["格列齊特"],
+      "classHint": "降血糖（磺胺）",
+      "commonStrengths": ["30mg", "60mg", "80mg"],
+      "info_zh": "Gliclazide 屬於磺胺尿素類別嘅降血糖成分。",
+      "info_en": "Gliclazide is a sulfonylurea listed for blood-sugar related medicines."
+    },
+    {
+      "id": "glimepiride",
+      "activeIngredient": "glimepiride",
+      "brands": ["Amaryl"],
+      "aliases": ["格列美脲"],
+      "classHint": "降血糖（磺胺）",
+      "commonStrengths": ["1mg", "2mg", "4mg"],
+      "info_zh": "Glimepiride 屬於磺胺尿素類別嘅降血糖成分。",
+      "info_en": "Glimepiride is a sulfonylurea listed for blood-sugar related medicines."
+    },
+    {
+      "id": "levothyroxine",
+      "activeIngredient": "levothyroxine",
+      "brands": ["Eltroxin", "Synthroid"],
+      "aliases": ["左甲狀腺素", "thyroxine"],
+      "classHint": "甲狀腺",
+      "commonStrengths": ["25mcg", "50mcg", "100mcg"],
+      "info_zh": "Levothyroxine 係甲狀腺相關嘅成分。",
+      "info_en": "Levothyroxine is listed for thyroid-related medicines."
+    },
+    {
+      "id": "salbutamol",
+      "activeIngredient": "salbutamol",
+      "brands": ["Ventolin", "喘樂寧"],
+      "aliases": ["albuterol", "沙丁胺醇"],
+      "classHint": "氣管（吸入）",
+      "commonStrengths": ["100mcg"],
+      "info_zh": "Salbutamol 係氣管相關嘅吸入成分。",
+      "info_en": "Salbutamol is listed for airway-related inhaler medicines."
+    },
+    {
+      "id": "ibuprofen",
+      "activeIngredient": "ibuprofen",
+      "brands": ["Brufen", "Nurofen"],
+      "aliases": ["布洛芬"],
+      "classHint": "止痛消炎（NSAID）",
+      "commonStrengths": ["200mg", "400mg", "600mg"],
+      "info_zh": "Ibuprofen 屬於非類固醇消炎（NSAID）類別嘅止痛成分。",
+      "info_en": "Ibuprofen is an NSAID listed for pain-related medicines."
+    },
+    {
+      "id": "diclofenac",
+      "activeIngredient": "diclofenac",
+      "brands": ["Voltaren", "扶他林"],
+      "aliases": ["雙氯芬酸"],
+      "classHint": "止痛消炎（NSAID）",
+      "commonStrengths": ["25mg", "50mg", "75mg"],
+      "info_zh": "Diclofenac 屬於非類固醇消炎（NSAID）類別嘅止痛成分。",
+      "info_en": "Diclofenac is an NSAID listed for pain-related medicines."
+    },
+    {
+      "id": "amoxicillin",
+      "activeIngredient": "amoxicillin",
+      "brands": ["Amoxil", "阿莫西林"],
+      "aliases": ["amoxycillin"],
+      "classHint": "抗生素（青黴素）",
+      "commonStrengths": ["250mg", "500mg"],
+      "info_zh": "Amoxicillin 屬於青黴素類別嘅抗生素成分。",
+      "info_en": "Amoxicillin is a penicillin-class antibiotic ingredient."
+    },
+    {
+      "id": "ciprofloxacin",
+      "activeIngredient": "ciprofloxacin",
+      "brands": ["Ciproxin"],
+      "aliases": ["環丙沙星"],
+      "classHint": "抗生素（喹諾酮）",
+      "commonStrengths": ["250mg", "500mg"],
+      "info_zh": "Ciprofloxacin 屬於喹諾酮類別嘅抗生素成分。",
+      "info_en": "Ciprofloxacin is a fluoroquinolone antibiotic ingredient."
+    },
+    {
+      "id": "gabapentin",
+      "activeIngredient": "gabapentin",
+      "brands": ["Neurontin"],
+      "aliases": ["加巴噴丁"],
+      "classHint": "神經痛",
+      "commonStrengths": ["100mg", "300mg", "400mg"],
+      "info_zh": "Gabapentin 係神經相關嘅成分。",
+      "info_en": "Gabapentin is listed for nerve-related medicines."
+    },
+    {
+      "id": "allopurinol",
+      "activeIngredient": "allopurinol",
+      "brands": ["Zyloric"],
+      "aliases": ["別嘌醇"],
+      "classHint": "尿酸",
+      "commonStrengths": ["100mg", "300mg"],
+      "info_zh": "Allopurinol 係尿酸相關嘅成分。",
+      "info_en": "Allopurinol is listed for uric-acid related medicines."
+    },
+    {
+      "id": "digoxin",
+      "activeIngredient": "digoxin",
+      "brands": ["Lanoxin"],
+      "aliases": ["地高辛"],
+      "classHint": "心臟",
+      "commonStrengths": ["0.0625mg", "0.125mg", "0.25mg"],
+      "info_zh": "Digoxin 係心臟相關嘅成分。",
+      "info_en": "Digoxin is listed for heart-related medicines."
+    },
+    {
+      "id": "sertraline",
+      "activeIngredient": "sertraline",
+      "brands": ["Zoloft"],
+      "aliases": ["舍曲林"],
+      "classHint": "情緒（SSRI）",
+      "commonStrengths": ["50mg", "100mg"],
+      "info_zh": "Sertraline 屬於 SSRI 類別嘅成分。",
+      "info_en": "Sertraline is an SSRI listed for mood-related medicines."
+    },
+    {
+      "id": "pravastatin",
+      "activeIngredient": "pravastatin",
+      "brands": ["Pravachol"],
+      "aliases": ["普伐他汀"],
+      "classHint": "降膽固醇（他汀）",
+      "commonStrengths": ["10mg", "20mg", "40mg"],
+      "info_zh": "Pravastatin 屬於他汀類嘅降膽固醇成分。",
+      "info_en": "Pravastatin is a statin listed for cholesterol-related medicines."
+    }
+  ]
+}
