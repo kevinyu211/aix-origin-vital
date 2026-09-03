@@ -68,8 +68,17 @@ export const SOPC_STEPS_EN: readonly string[] = [
   "Then go to this specialty's waiting hall and wait.",
 ] as const;
 
+// Simplified-character (zh-CN) steps — same meaning as SOPC_STEPS_ZH, Mandarin phrasing.
+export const SOPC_STEPS_ZH_CN: readonly string[] = [
+  "这张纸上的时间是登记，不是见医生。早 15 分钟到。",
+  "去自助机或缴费处登记，不要去旧的交票柜位。",
+  "去这个专科大堂等。",
+] as const;
+
 export function sopcSteps(lang: Lang): readonly string[] {
-  return lang === "en" ? SOPC_STEPS_EN : SOPC_STEPS_ZH;
+  if (lang === "en") return SOPC_STEPS_EN;
+  if (lang === "zh-CN") return SOPC_STEPS_ZH_CN;
+  return SOPC_STEPS_ZH;
 }
 
 /**
@@ -80,9 +89,14 @@ export const SOPC_LATE_ZH =
   "遲到都唔使慌：遲 15 至 30 分鐘，去登記處重新登記就得，唔會取消你個籌。";
 export const SOPC_LATE_EN =
   "Running late is okay: if you are 15–30 minutes late, just re-register at the registration counter — your slot is not cancelled.";
+// Simplified-character (zh-CN) reassurance — same meaning as SOPC_LATE_ZH.
+export const SOPC_LATE_ZH_CN =
+  "迟到也不用慌：迟 15 至 30 分钟，去登记处重新登记就行，不会取消你的号。";
 
 export function sopcLate(lang: Lang): string {
-  return lang === "en" ? SOPC_LATE_EN : SOPC_LATE_ZH;
+  if (lang === "en") return SOPC_LATE_EN;
+  if (lang === "zh-CN") return SOPC_LATE_ZH_CN;
+  return SOPC_LATE_ZH;
 }
 
 /** Where the walk ends: a human counter (payment / registration), never an app or GPS. */
@@ -90,9 +104,14 @@ export const SOPC_HUMAN_ZH =
   "搞唔掂、唔清楚，就去繳費處／登記處問下職員。真人幫到你。";
 export const SOPC_HUMAN_EN =
   "If anything is unclear, ask a staff member at the payment / registration counter. A real person can help you.";
+// Simplified-character (zh-CN) end-on-a-human line — same meaning as SOPC_HUMAN_ZH.
+export const SOPC_HUMAN_ZH_CN =
+  "搞不定、不清楚，就去缴费处／登记处问一下职员。真人帮到你。";
 
 export function sopcHuman(lang: Lang): string {
-  return lang === "en" ? SOPC_HUMAN_EN : SOPC_HUMAN_ZH;
+  if (lang === "en") return SOPC_HUMAN_EN;
+  if (lang === "zh-CN") return SOPC_HUMAN_ZH_CN;
+  return SOPC_HUMAN_ZH;
 }
 
 /** One string that reads all three steps aloud in order (for the 「聽晒」 button). */

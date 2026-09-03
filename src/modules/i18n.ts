@@ -1,8 +1,9 @@
-// i18n module — zh-HK (written Cantonese, 粵) and en strings for every screen.
-// The disclaimer and consent come from the compliance module so they stay verbatim.
+// i18n module — zh-HK (written Cantonese, 粵), zh-CN (Mandarin, 简体) and en strings for
+// every screen. The disclaimer and consent come from the compliance module (via the
+// disclaimerFor / consentFor helpers) so they stay verbatim and single-sourced.
 
 import type { Lang } from "./types";
-import { CONSENT, DISCLAIMER } from "./compliance";
+import { consentFor, disclaimerFor } from "./compliance";
 
 export interface Strings {
   appName: string;
@@ -142,11 +143,11 @@ const zhHK: Strings = {
     close: "閂咗佢",
     listen: "聽",
     stop: "停",
-    disclaimer: DISCLAIMER,
+    disclaimer: disclaimerFor("zh-HK"),
   },
   s0: {
     title: "歡迎使用對藥",
-    consent: CONSENT,
+    consent: consentFor("zh-HK"),
     simulatedToggle: "我明白，我只會用假嘅／示範資料",
     mustConsent: "請先剔上面嘅方格，先可以開始。",
     start: "開始",
@@ -275,11 +276,11 @@ const en: Strings = {
     close: "Close",
     listen: "Listen",
     stop: "Stop",
-    disclaimer: DISCLAIMER,
+    disclaimer: disclaimerFor("en"),
   },
   s0: {
     title: "Welcome to DoYeuk",
-    consent: CONSENT,
+    consent: consentFor("en"),
     simulatedToggle: "I understand — I will only use fake / demo data",
     mustConsent: "Please tick the box above before you can start.",
     start: "Start",
@@ -398,8 +399,153 @@ const en: Strings = {
   },
 };
 
-const TABLE: Record<Lang, Strings> = { "zh-HK": zhHK, en };
+// zh-CN — natural mainland Simplified Chinese (Mandarin phrasing), NOT a character-by-
+// character conversion of the Cantonese table. The disclaimer and consent are sourced from
+// the compliance helpers so they stay single-sourced and verbatim.
+const zhCN: Strings = {
+  appName: "对药",
+  tagline: "出院药物对照",
+  demoBadge: "示范",
+  common: {
+    back: "返回",
+    next: "下一步",
+    close: "关闭",
+    listen: "听",
+    stop: "停",
+    disclaimer: disclaimerFor("zh-CN"),
+  },
+  s0: {
+    title: "欢迎使用对药",
+    consent: consentFor("zh-CN"),
+    simulatedToggle: "我明白，我只会用假的／示范资料",
+    mustConsent: "请先勾选上面的方框，才可以开始。",
+    start: "开始",
+    language: "语言",
+    voiceToggle: "讲给我听",
+    largeType: "老友记大字",
+    voiceOn: "已开",
+    voiceOff: "未开",
+  },
+  s1: {
+    title: "第一步：拍药单",
+    hint: "把医院的出院药单放在框里，拍一张照。只用示范／假的药单。",
+    useSample: "用示范药单",
+    permissionNeeded: "想用相机，要给对药相机权限。",
+    grant: "给相机权限",
+    shutter: "拍照",
+    captured: "拍好了！",
+    couldNotRead: "现在是示范模式，读不到真的照片。请按「用示范药单」。",
+  },
+  s2: {
+    title: "第二步：拍药盒",
+    hint: "逐一拍抽屉里的药盒（最多 8 盒）。拍完就按「拍完了」。",
+    boxesSoFar: (n: number) => `已经拍了 ${n} 盒`,
+    addBox: "拍下一盒",
+    done: "拍完了",
+    shutter: "拍照",
+  },
+  s3: {
+    title: "对照结果",
+    listenAll: "全部听",
+    continue: "继续在吃的",
+    new: "药单有、抽屉没见到（新）",
+    notOnList: "不在你的药单上",
+    unmatched: "对不上、要问药剂师",
+    empty: "这一组没有东西。",
+    revealTitle: "留意！",
+    revealBody: (name: string) =>
+      `抽屉里有两盒或以上，可能是同一种药（${name}），只是名字不同。`,
+    strengthChanged: (sheet: string, box: string) =>
+      `药单写 ${sheet}，药盒写 ${box}，份量不一样了。`,
+    onSheet: "药单",
+    inDrawer: "药盒",
+    askLabel: "有什么想问？",
+    askPlaceholder: "打你想问的东西……",
+    askSend: "问",
+    pharmacistCta: "做一张药剂师问题卡",
+  },
+  s4: {
+    title: "药剂师问题卡",
+    intro: "带这张卡去问药剂师。全部都是问题，不是建议。",
+    share: "分享 / 存图",
+    shareFail: "现在分享不了，可以截图。",
+    noItems: "这次示范没有需要特别留意的项目。",
+  },
+  s5: {
+    title: "关于 与 私隐",
+    modelVsRules: "哪部分靠 AI，哪部分靠规则？",
+    modelVsRulesBody:
+      "读药单和药盒名那一步靠 AI 视觉模型（示范模式用固定假资料）。分组和对照那一步是固定规则算出来的，同一份输入永远得出同一个结果，不靠 AI。",
+    providers: "供应商",
+    providersBody:
+      "视觉：anthropic / minimax / mock（示范用 mock）。语音：MiniMax T2A 普通话，设备语音做后备。",
+    crossBorder: "跨境资料",
+    crossBorderBody:
+      "示范模式不会传任何资料出去。开启真实 AI 供应商时，照片内容会传去该供应商处理，请只用假／示范资料。",
+  },
+  s6: {
+    title: "这个问题想问专业人士",
+    askPharmacist: "带去问药剂师",
+  },
+  buckets: {
+    continue: "继续在吃的",
+    new: "新",
+    notOnList: "不在你的药单上",
+    unmatched: "对不上",
+  },
+  home: {
+    title: "Vital 帮手",
+    subtitle: "软性健康支援 · 示范",
+    pickPrompt: "今天想做什么？",
+    sopcTitle: "今天去专科门诊",
+    sopcSub: "带你走专科门诊，一步一步，讲给你听。",
+    doyeukTitle: "对药（出院药物对照）",
+    doyeukSub: "对照出院药单和抽屉里的药盒。",
+    demoNote: "全部都是示范／假资料，不要用真人资料。",
+  },
+  sopc: {
+    badge: "示范",
+    s1Title: "第一步：拍预约纸",
+    s1Hint: "把专科门诊预约纸放在框里拍一张照，或者用下面的示范预约纸。只用示范／假的纸。",
+    timeNote: "留意：纸上印的时间是「登记时间」，不是见医生的时间。",
+    useSample: "用示范预约纸",
+    captured: "看到了！",
+    slipHint: "这是示范预约纸，看一下「登记时间」。",
+    regTimeLabel: "登记时间",
+    patientLabel: "病人",
+    caseLabel: "个案编号",
+    dateLabel: "日期",
+    specialtyLabel: "专科",
+    venueLabel: "地点",
+    watermark: "示范",
+    seeSteps: "看／听三个步骤",
+    s2Title: "专科门诊三步",
+    s2Intro: "跟着这三步走就行。想听就按「全部听」。",
+    listenAll: "🔊 全部听",
+    stopListen: "停",
+    stepLabel: (n: number) => `第 ${n} 步`,
+    lateTitle: "迟到？不用慌",
+    lateBody: "迟 15 至 30 分钟，去登记处重新登记就行，不会取消你的号。",
+    toEnd: "下一步",
+    s3Title: "搞定",
+    s3Body: "走完这三步，在专科大堂等叫名／叫号就行。",
+    humanTitle: "找不到路？问真人",
+    replay: "再听一次",
+    backHome: "返回主页",
+  },
+};
+
+const TABLE: Record<Lang, Strings> = { "zh-HK": zhHK, "zh-CN": zhCN, en };
 
 export function L(lang: Lang): Strings {
   return TABLE[lang];
+}
+
+/**
+ * Short script label for the language cycle control (粵 / 简 / EN). Shows the CURRENT
+ * language so the pill doubles as a clear "which script am I in" indicator; tapping it
+ * advances through zh-HK → zh-CN → en, so 简体 is reachable in one or two taps.
+ */
+export function langPillLabel(lang: Lang): string {
+  return lang === "zh-HK" ? "粵" : lang === "zh-CN" ? "简" : "EN";
 }
