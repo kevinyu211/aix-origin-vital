@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { colors, fontSizes, MIN_TAP, radius, spacing } from "../modules/ui";
 import { useApp } from "../state/AppContext";
-import { L } from "../modules/i18n";
+import { L, langPillLabel } from "../modules/i18n";
 
 export function useType() {
   const { fontScale } = useApp();
@@ -173,9 +173,14 @@ export function TopBar({ onBack }: { onBack?: () => void }) {
             {fontScale === "large" ? "A-" : "A+"}
           </Text>
         </Pressable>
-        <Pressable accessibilityRole="button" onPress={toggleLang} style={styles.pill}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="粵 / 简 / EN"
+          onPress={toggleLang}
+          style={styles.pill}
+        >
           <Text style={{ color: colors.ink, fontSize: t.small, fontWeight: "700" }}>
-            {lang === "zh-HK" ? "EN" : "中"}
+            {langPillLabel(lang)}
           </Text>
         </Pressable>
       </View>

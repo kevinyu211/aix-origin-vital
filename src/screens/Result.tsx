@@ -21,11 +21,13 @@ import { useApp } from "../state/AppContext";
 import { L } from "../modules/i18n";
 import { bucketColor, colors, radius, spacing } from "../modules/ui";
 import { groupsByBucket } from "../modules/reconcile";
-import type { Bucket, ReconcileGroup } from "../modules/types";
+import type { Bucket, Lang, ReconcileGroup } from "../modules/types";
 import { classifyQuery, buildRefusal } from "../modules/compliance";
 
-function groupLabel(g: ReconcileGroup, lang: "zh-HK" | "en"): string {
+function groupLabel(g: ReconcileGroup, lang: Lang): string {
   if (!g.entry) return "";
+  // DrugEntry.plain is only { zh, en }; zh-CN shares the zh label (dictionary characters
+  // stay as-is in this PR — no dictionary rewrite).
   return lang === "en" ? g.entry.plain.en : g.entry.plain.zh;
 }
 
@@ -154,7 +156,12 @@ export function Result() {
         <PrimaryButton label={s.s3.askSend} onPress={submitAsk} color={colors.new} />
         {asked ? (
           <Small color={colors.inkSoft}>
-            「{asked}」— {lang === "en" ? "noted for your pharmacist card." : "我會加落藥劑師問題卡度。"}
+            「{asked}」—{" "}
+            {lang === "en"
+              ? "noted for your pharmacist card."
+              : lang === "zh-CN"
+                ? "我会加到药剂师问题卡上。"
+                : "我會加落藥劑師問題卡度。"}
           </Small>
         ) : null}
       </Card>
