@@ -41,13 +41,13 @@ export function reconcile(sheetItems: MedItem[], boxItems: MedItem[]): Reconcile
 
   const ingest = (item: MedItem) => {
     const { entry, method } = matchName(item.name);
-    const key = entry ? entry.inn : `unmatched:${item.name.trim().toLowerCase()}`;
+    const key = entry ? entry.activeIngredient : `unmatched:${item.name.trim().toLowerCase()}`;
     let g = groups.get(key);
     if (!g) {
       g = {
         key,
-        activeIngredient: entry ? entry.inn : null,
-        displayName: entry ? entry.inn : item.name.trim(),
+        activeIngredient: entry ? entry.activeIngredient : null,
+        displayName: entry ? entry.activeIngredient : item.name.trim(),
         entry: entry ?? null,
         matchMethod: method,
         sheetItems: [],

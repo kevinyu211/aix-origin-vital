@@ -3,7 +3,7 @@
 
 export type Lang = "zh-HK" | "en";
 
-/** One brand row from Cindy's HK discharge vocab. `hk` is a Drug Office registration when present. */
+/** One brand row from Cindy's source vocab (`drugs.json` at repo root). */
 export interface DrugBrand {
   en: string;
   zh: string | null;
@@ -11,11 +11,8 @@ export interface DrugBrand {
   product?: string;
 }
 
-/**
- * A dictionary entry for one INN. Fields are locked to the curated vocab —
- * do not invent dosages, indications, or start/stop language here.
- */
-export interface DrugEntry {
+/** Cindy's curated source row (repo-root drugs.json). Not what the matcher loads. */
+export interface CindyDrugRow {
   id: string;
   inn: string;
   inn_zh: string;
@@ -24,12 +21,21 @@ export interface DrugEntry {
   source: string;
 }
 
-export interface DrugDictionaryFile {
-  title: string;
-  rules: string[];
-  sources: string[];
-  count: number;
-  drugs: DrugEntry[];
+/**
+ * App dictionary row (dictionary/drugs.json). Mapped from Cindy's INN labels.
+ * `plain` is label-style information only — never start/stop instructions.
+ * `strengths` are match labels only, never rendered as dose advice.
+ */
+export interface DrugEntry {
+  id: string;
+  activeIngredient: string;
+  ingredientZh: string;
+  brandNames: string[];
+  aliases: string[];
+  strengths: string[];
+  forms: string[];
+  category: { zh: string; en: string };
+  plain: { zh: string; en: string };
 }
 
 /** Where a detected medicine name came from. */

@@ -1,21 +1,20 @@
-// dictionary module — loads Cindy's hand-curated HK discharge INN vocab.
-// Pure and unit-testable: no UI, no network, no model.
-// Matcher terms are ONLY: inn / inn_zh / also / brands[].en / brands[].zh / brands[].hk.
+// dictionary module — loads the mapped DrugEntry[] (from Cindy's 60 HK discharge INNs).
+// Matcher terms: activeIngredient (inn) / ingredientZh (inn_zh) / aliases (also + HA labels) / brandNames.
 
-import type { DrugDictionaryFile, DrugEntry } from "./types";
+import type { DrugEntry } from "./types";
 import raw from "../../dictionary/drugs.json";
 
-const data = raw as DrugDictionaryFile;
+const drugs = raw as DrugEntry[];
 
-export const DICTIONARY_TITLE: string = data.title;
-export const DICTIONARY_COUNT: number = data.count;
+export const DICTIONARY_TITLE = "對藥 label vocab — HK discharge INNs";
+export const DICTIONARY_COUNT: number = drugs.length;
 
 export function getAllDrugs(): DrugEntry[] {
-  return data.drugs;
+  return drugs;
 }
 
 export function getDrugById(id: string): DrugEntry | undefined {
-  return data.drugs.find((d) => d.id === id);
+  return drugs.find((d) => d.id === id);
 }
 
 /**
@@ -33,13 +32,9 @@ export function normaliseName(input: string): string {
     .trim();
 }
 
-/** Searchable terms for one entry — inn / inn_zh / also / brand en+zh+hk only. */
+/** Searchable terms: inn / inn_zh / also / brands (via activeIngredient, ingredientZh, aliases, brandNames). */
 export function entryTerms(entry: DrugEntry): string[] {
-  const terms: string[] = [entry.inn, entry.inn_zh, ...entry.also];
-  for (const b of entry.brands) {
-    if (b.en) terms.push(b.en);
-    if (b.zh) terms.push(b.zh);
-    if (b.hk) terms.push(b.hk);
-  }
-  return terms.filter((t) => t.trim().length > 0);
+  return [entry.activeIngredient, entry.ingredientZh, ...entry.brandNames, ...entry.aliases].filter(
+    (t) => t.trim().length > 0,
+  );
 }

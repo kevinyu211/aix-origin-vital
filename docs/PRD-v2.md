@@ -84,9 +84,11 @@ Everything is labelled **示範**.
 
 ## Dictionary
 
-Cindy's curated **60 INN** vocab is committed **exactly** as `dictionary/drugs.json` and
-`drugs.json` at repo root. Matcher uses **inn / inn_zh / also / brands[].en / brands[].zh /
-brands[].hk** only — no invented dosages, indications, or start/stop language.
+Cindy's curated **60 INN** source stays at repo-root `drugs.json` (inn / inn_zh / also / brands).
+The app loads a mapped **DrugEntry[]** at `dictionary/drugs.json`: id, activeIngredient,
+ingredientZh, brandNames, aliases (incl. uppercase HA labels like `PARACETAMOL TAB 500MG`),
+strengths (match labels only), forms, category, plain (label-style only — never 應該/必須/停/加/減
+as instructions). Matcher uses inn / inn_zh / also / brands via those fields.
 Required demo set is first: paracetamol 撲熱息痛 PANADOL/必理痛 HK-02280; amlodipine 氨氯地平
 NORVASC HK-33731; aspirin 阿司匹林; atorvastatin 阿托伐他汀 LIPITOR/立普妥; metformin 二甲雙胍
 GLUCOPHAGE/糖尿適.

@@ -35,7 +35,7 @@ export interface MatchOutcome {
 
 /**
  * Match a free-text medicine name to a dictionary entry.
- * Terms: inn / inn_zh / also / brands[].en / brands[].zh / brands[].hk.
+ * Terms: inn / inn_zh / also / brands (via DrugEntry activeIngredient, ingredientZh, aliases, brandNames).
  * Order: exact -> normalised -> Levenshtein<=2 -> none.
  * Deterministic: dictionary order; on a Levenshtein tie the smallest distance wins.
  */

@@ -26,15 +26,14 @@ import { classifyQuery, buildRefusal } from "../modules/compliance";
 
 function groupLabel(g: ReconcileGroup, lang: "zh-HK" | "en"): string {
   if (!g.entry) return "";
-  const brand = g.entry.brands[0];
-  if (!brand) return "";
-  if (lang === "en") return brand.en;
-  return brand.zh ?? brand.en;
+  return lang === "en" ? g.entry.plain.en : g.entry.plain.zh;
 }
 
 function groupTitle(g: ReconcileGroup): string {
   if (!g.entry) return g.displayName;
-  return `${g.entry.inn_zh}（${g.entry.inn}）`;
+  const brand = g.entry.brandNames[0];
+  const inn = `${g.entry.ingredientZh}（${g.entry.activeIngredient}）`;
+  return brand ? `${inn} · ${brand}` : inn;
 }
 
 function GroupCard({ g }: { g: ReconcileGroup }) {
