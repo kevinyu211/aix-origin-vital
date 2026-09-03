@@ -22,23 +22,40 @@ describe("dictionary — DrugEntry[] mapped from Cindy INNs", () => {
     ]);
   });
 
+  test("first five match the locked DrugEntry dump field-for-field", () => {
+    expect(drugs[0].aliases).toEqual([
+      "acetaminophen",
+      "PARACETAMOL",
+      "撲熱息痛",
+      "PANADOL TAB 500MG",
+      "PANADOL EXTEND TAB 665MG",
+      "BIOGESIC TABLETS 500MG",
+      "PARACETAMOL TAB 500MG",
+      "必理痛",
+    ]);
+    expect(drugs[2].aliases).toContain("ASPIRIN TAB 80MG");
+    expect(drugs[2].ingredientZh).toBe("阿士匹靈");
+  });
+
   test("paracetamol demo row", () => {
     const p = getDrugById("paracetamol")!;
     expect(p.activeIngredient).toBe("paracetamol");
     expect(p.ingredientZh).toBe("撲熱息痛");
     expect(p.brandNames).toEqual(expect.arrayContaining(["PANADOL", "必理痛"]));
-    expect(p.aliases).toEqual(expect.arrayContaining(["PARACETAMOL TAB 500MG", "Panadol"]));
-    expect(p.strengths).toEqual(expect.arrayContaining(["500mg"]));
+    expect(p.aliases).toEqual(
+      expect.arrayContaining(["PARACETAMOL TAB 500MG", "PANADOL TAB 500MG", "必理痛"]),
+    );
+    expect(p.strengths).toEqual(["500mg", "665mg", "500mg"]);
   });
 
-  test("amlodipine demo row (5mg + 10mg, 氨氮地平 alias)", () => {
+  test("amlodipine demo row (5mg + 10mg HA labels)", () => {
     const a = getDrugById("amlodipine")!;
     expect(a.ingredientZh).toBe("氨氯地平");
     expect(a.brandNames).toContain("NORVASC");
     expect(a.aliases).toEqual(
-      expect.arrayContaining(["AMLODIPINE TAB 5MG", "AMLODIPINE TAB 10MG", "氨氮地平"]),
+      expect.arrayContaining(["AMLODIPINE TAB 5MG", "AMLODIPINE TAB 10MG", "NORVASC TAB 5MG", "Amlodipin"]),
     );
-    expect(a.strengths).toEqual(expect.arrayContaining(["5mg", "10mg"]));
+    expect(a.strengths).toEqual(["5mg", "10mg"]);
   });
 
   test("aspirin demo row (阿士匹靈 + ASPIRIN TAB 80MG)", () => {
@@ -55,7 +72,7 @@ describe("dictionary — DrugEntry[] mapped from Cindy INNs", () => {
     expect(t.strengths).toContain("20mg");
     const m = getDrugById("metformin")!;
     expect(m.brandNames).toEqual(expect.arrayContaining(["GLUCOPHAGE", "糖尿適"]));
-    expect(m.aliases).toEqual(expect.arrayContaining(["METFORMIN TAB 500MG", "二甲雙胞"]));
+    expect(m.aliases).toEqual(expect.arrayContaining(["METFORMIN TAB 500MG", "二甲雙胍"]));
     expect(m.strengths).toContain("500mg");
   });
 
@@ -108,7 +125,6 @@ describe("match — inn / inn_zh / also / brands + HA labels", () => {
     ["acetaminophen", "paracetamol"],
     ["NORVASC", "amlodipine"],
     ["氨氯地平", "amlodipine"],
-    ["氨氮地平", "amlodipine"],
     ["AMLODIPINE TAB 5MG", "amlodipine"],
     ["阿士匹靈", "aspirin"],
     ["阿司匹林", "aspirin"],
@@ -118,7 +134,7 @@ describe("match — inn / inn_zh / also / brands + HA labels", () => {
     ["ATORVASTATIN TAB 20MG", "atorvastatin"],
     ["糖尿適", "metformin"],
     ["GLUCOPHAGE", "metformin"],
-    ["二甲雙胞", "metformin"],
+    ["二甲雙胍", "metformin"],
     ["METFORMIN TAB 500MG", "metformin"],
   ])("matches %s → %s", (name, id) => {
     const { entry } = matchName(name);

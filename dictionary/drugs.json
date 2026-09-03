@@ -20,13 +20,12 @@
       "PANADOL EXTEND TAB 665MG",
       "BIOGESIC TABLETS 500MG",
       "PARACETAMOL TAB 500MG",
-      "必理痛",
-      "Panadol",
-      "HK-02280"
+      "必理痛"
     ],
     "strengths": [
       "500mg",
-      "665mg"
+      "665mg",
+      "500mg"
     ],
     "forms": [
       "tablet"
@@ -51,12 +50,10 @@
       "amlodipine besilate",
       "AMLODIPINE",
       "氨氯地平",
-      "氨氮地平",
       "NORVASC TAB 5MG",
       "AMLODIPINE TAB 5MG",
       "AMLODIPINE TAB 10MG",
-      "Amlodipin",
-      "HK-33731"
+      "Amlodipin"
     ],
     "strengths": [
       "5mg",
@@ -145,7 +142,6 @@
       "metformin hydrochloride",
       "METFORMIN",
       "二甲雙胍",
-      "二甲雙胞",
       "METFORMIN TAB 500MG"
     ],
     "strengths": [
