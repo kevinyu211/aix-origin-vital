@@ -3,16 +3,33 @@
 
 export type Lang = "zh-HK" | "en";
 
-/** A dictionary entry describing one active ingredient. */
+/** One brand row from Cindy's HK discharge vocab. `hk` is a Drug Office registration when present. */
+export interface DrugBrand {
+  en: string;
+  zh: string | null;
+  hk?: string;
+  product?: string;
+}
+
+/**
+ * A dictionary entry for one INN. Fields are locked to the curated vocab —
+ * do not invent dosages, indications, or start/stop language here.
+ */
 export interface DrugEntry {
   id: string;
-  activeIngredient: string;
-  brands: string[];
-  aliases: string[];
-  classHint?: string;
-  commonStrengths?: string[];
-  info_zh: string;
-  info_en: string;
+  inn: string;
+  inn_zh: string;
+  also: string[];
+  brands: DrugBrand[];
+  source: string;
+}
+
+export interface DrugDictionaryFile {
+  title: string;
+  rules: string[];
+  sources: string[];
+  count: number;
+  drugs: DrugEntry[];
 }
 
 /** Where a detected medicine name came from. */

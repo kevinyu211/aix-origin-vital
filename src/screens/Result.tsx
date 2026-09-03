@@ -24,15 +24,17 @@ import { groupsByBucket } from "../modules/reconcile";
 import type { Bucket, ReconcileGroup } from "../modules/types";
 import { classifyQuery, buildRefusal } from "../modules/compliance";
 
-function groupInfo(g: ReconcileGroup, lang: "zh-HK" | "en"): string {
+function groupLabel(g: ReconcileGroup, lang: "zh-HK" | "en"): string {
   if (!g.entry) return "";
-  return lang === "en" ? g.entry.info_en : g.entry.info_zh;
+  const brand = g.entry.brands[0];
+  if (!brand) return "";
+  if (lang === "en") return brand.en;
+  return brand.zh ?? brand.en;
 }
 
 function groupTitle(g: ReconcileGroup): string {
   if (!g.entry) return g.displayName;
-  const brand = g.entry.brands[0];
-  return brand ? `${g.entry.activeIngredient}（${brand}）` : g.entry.activeIngredient;
+  return `${g.entry.inn_zh}（${g.entry.inn}）`;
 }
 
 function GroupCard({ g }: { g: ReconcileGroup }) {
@@ -44,7 +46,7 @@ function GroupCard({ g }: { g: ReconcileGroup }) {
     <Card style={{ borderLeftWidth: 6, borderLeftColor: bucketColor(g.bucket) }}>
       <Heading>{groupTitle(g)}</Heading>
       {strength ? <Small>{strength}</Small> : null}
-      {groupInfo(g, lang) ? <Body color={colors.inkSoft}>{groupInfo(g, lang)}</Body> : null}
+      {groupLabel(g, lang) ? <Body color={colors.inkSoft}>{groupLabel(g, lang)}</Body> : null}
       {g.flags.includes("strengthChanged") && g.strengthDetail ? (
         <View style={{ backgroundColor: "#FBEFE1", padding: spacing.sm, borderRadius: radius.sm }}>
           <Body color={colors.notOnList}>

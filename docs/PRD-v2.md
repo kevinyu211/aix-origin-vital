@@ -68,9 +68,9 @@ Drug info sentences are label-style only — never **應該 / 必須 / 停 / 加
 
 Synthetic persona **陳伯, 72, 深水埗**. All data fabricated.
 
-- **Sheet:** Paracetamol 500mg, Amlodipine 10mg, Atorvastatin 20mg, Metformin 500mg.
-- **Boxes:** 必理痛 500mg, Amlodipine 5mg, Aspirin 80mg, Metformin 500mg, unknown box (神秘補品丸),
-  **plus a second paracetamol box (Panadol 500mg)** so the duplicate reveal always fires.
+- **Sheet (4 only, no aspirin):** 必理痛 500mg, NORVASC 10mg, 阿托伐他汀 20mg, 二甲雙胍 500mg.
+- **Boxes:** 必理痛 500mg, Amlodipine 5mg, ASPIRIN TAB 80MG, Metformin 500mg, unknown box (神秘補品丸),
+  **plus a second 必理痛** so the duplicate reveal always fires.
 - **Expected result:**
   - **duplicate** paracetamol (必理痛 + Panadol → both paracetamol) — `continue` + `duplicateInDrawer`
   - **strengthChanged** amlodipine (sheet 10mg vs box 5mg) — `continue` + `strengthChanged`
@@ -84,8 +84,12 @@ Everything is labelled **示範**.
 
 ## Dictionary
 
-40–60 target; this PR ships **35** common HK discharge drugs. Required entries present:
-paracetamol (Panadol / 必理痛), amlodipine, aspirin, atorvastatin, metformin.
+Cindy's curated **60 INN** vocab is committed **exactly** as `dictionary/drugs.json` and
+`drugs.json` at repo root. Matcher uses **inn / inn_zh / also / brands[].en / brands[].zh /
+brands[].hk** only — no invented dosages, indications, or start/stop language.
+Required demo set is first: paracetamol 撲熱息痛 PANADOL/必理痛 HK-02280; amlodipine 氨氯地平
+NORVASC HK-33731; aspirin 阿司匹林; atorvastatin 阿托伐他汀 LIPITOR/立普妥; metformin 二甲雙胍
+GLUCOPHAGE/糖尿適.
 
 ## Design tokens
 
@@ -97,7 +101,7 @@ Cantonese in all zh-HK strings.
 
 - Expo app boots (`npx expo start`, `npx expo export` bundles clean).
 - S0–S3 with the **mock** provider + sample images/fixtures (S4–S6 also included).
-- `dictionary/drugs.json` with **≥ 25** entries including the five demo drugs.
+- `dictionary/drugs.json` + repo-root `drugs.json` — Cindy's **60 INN** vocab, matcher on inn / inn_zh / also / brands.
 - `reconcile` + tests for **C1–C6** style cases (plus full 陳伯 scenario & determinism).
 - Verbatim disclaimer; 老友記 font scale.
 - Voice via `expo-speech` (MiniMax T2A adapter wired, enabled in a later PR).

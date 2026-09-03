@@ -5,7 +5,7 @@ import { Body, Card, DisclaimerFooter, Heading, Screen, SecondaryButton, Small, 
 import { useApp } from "../state/AppContext";
 import { L } from "../modules/i18n";
 import { colors } from "../modules/ui";
-import { DICTIONARY_VERSION, getAllDrugs } from "../modules/dictionary";
+import { DICTIONARY_COUNT, DICTIONARY_TITLE, getAllDrugs } from "../modules/dictionary";
 import { getVisionProviderName, getTtsProviderName } from "../modules/config";
 
 export function About() {
@@ -26,7 +26,7 @@ export function About() {
         <Heading>{s.s5.providers}</Heading>
         <Body color={colors.inkSoft}>{s.s5.providersBody}</Body>
         <Small color={colors.inkSoft}>
-          vision = {getVisionProviderName()} · tts = {getTtsProviderName()} · dict {DICTIONARY_VERSION} ({getAllDrugs().length})
+          vision = {getVisionProviderName()} · tts = {getTtsProviderName()} · {DICTIONARY_TITLE} ({getAllDrugs().length}/{DICTIONARY_COUNT})
         </Small>
       </Card>
 

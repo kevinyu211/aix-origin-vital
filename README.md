@@ -32,7 +32,7 @@ npm run typecheck
 - Expo (React Native) + TypeScript — no web/Next.js, no backend, no accounts.
 - `expo-camera`, `expo-speech`, `expo-sharing`, `react-native-view-shot`.
 - Pluggable `VisionProvider` (`anthropic` | `minimax` | `mock`, default `mock`).
-- Hand-curated local `dictionary/drugs.json` (35 common HK discharge drugs).
+- Hand-curated local `dictionary/drugs.json` (and `drugs.json` at repo root) — Cindy's 60 HK discharge INNs. Matcher: inn / inn_zh / also / brands[].en|zh|hk.
 - Pure, deterministic `reconcile` module (same input ⇒ identical output).
 
 ## Providers / keys

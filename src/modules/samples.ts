@@ -1,5 +1,6 @@
 // samples module — synthetic 示範 (demo) data so the demo can never fail.
 // Persona: 陳伯, 72, 深水埗. All data is fabricated. No real patient information.
+// SAMPLE PATH LOCK: aspirin is NEVER on the sheet (that would fake the notOnList reveal).
 
 import type { MedItem } from "./types";
 
@@ -9,24 +10,23 @@ export const SAMPLE_PATIENT = {
   district: "深水埗",
 };
 
-// Discharge sheet: what the (fake) hospital list says.
+// Sheet: four INNs only. Names are curated vocab terms (inn / inn_zh / brands).
 export const SAMPLE_SHEET: MedItem[] = [
-  { raw: "Paracetamol 500mg", name: "Paracetamol", strength: "500mg", source: "sheet" },
-  { raw: "Amlodipine 10mg", name: "Amlodipine", strength: "10mg", source: "sheet" },
-  { raw: "Atorvastatin 20mg", name: "Atorvastatin", strength: "20mg", source: "sheet" },
-  { raw: "Metformin 500mg", name: "Metformin", strength: "500mg", source: "sheet" },
+  { raw: "必理痛 500mg", name: "必理痛", strength: "500mg", source: "sheet" },
+  { raw: "NORVASC 10mg", name: "NORVASC", strength: "10mg", source: "sheet" },
+  { raw: "阿托伐他汀 20mg", name: "阿托伐他汀", strength: "20mg", source: "sheet" },
+  { raw: "二甲雙胍 500mg", name: "二甲雙胍", strength: "500mg", source: "sheet" },
 ];
 
-// Boxes in the drawer, in the order 陳伯 photographs them (S2 "影下一盒").
-// Note two paracetamol boxes under DIFFERENT names (必理痛 + Panadol) so the
-// duplicate reveal always fires.
+// Drawer. Two 必理痛 boxes so duplicateInDrawer always fires.
+// Aspirin is drawer-only (notOnList). Amlodipine box is 5mg vs sheet 10mg.
 export const SAMPLE_BOXES: MedItem[] = [
   { raw: "必理痛 500mg", name: "必理痛", strength: "500mg", source: "box" },
   { raw: "Amlodipine 5mg", name: "Amlodipine", strength: "5mg", source: "box" },
-  { raw: "Aspirin 80mg", name: "Aspirin", strength: "80mg", source: "box" },
+  { raw: "ASPIRIN TAB 80MG", name: "ASPIRIN TAB 80MG", strength: "80mg", source: "box" },
   { raw: "Metformin 500mg", name: "Metformin", strength: "500mg", source: "box" },
   { raw: "神秘補品丸", name: "神秘補品丸", source: "box" },
-  { raw: "Panadol 500mg", name: "Panadol", strength: "500mg", source: "box" },
+  { raw: "必理痛 500mg", name: "必理痛", strength: "500mg", source: "box" },
 ];
 
 export const SAMPLE_SHEET_FIXTURE_KEY = "chan-sheet";

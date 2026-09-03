@@ -2,7 +2,7 @@
 // Pure: no UI, no network, no model. Same input always produces the same output.
 
 import type { DrugEntry, MatchMethod, Strength } from "./types";
-import { getAllDrugs, normaliseName } from "./dictionary";
+import { entryTerms, getAllDrugs, normaliseName } from "./dictionary";
 
 /** Classic Levenshtein edit distance (iterative, two-row). */
 export function levenshtein(a: string, b: string): number {
@@ -35,28 +35,28 @@ export interface MatchOutcome {
 
 /**
  * Match a free-text medicine name to a dictionary entry.
- * Order: exact brand/alias/ingredient -> normalised -> Levenshtein<=2 -> none.
- * Deterministic: entries are scanned in dictionary order; on a Levenshtein tie the
- * earliest entry (smallest distance first) wins.
+ * Terms: inn / inn_zh / also / brands[].en / brands[].zh / brands[].hk.
+ * Order: exact -> normalised -> Levenshtein<=2 -> none.
+ * Deterministic: dictionary order; on a Levenshtein tie the smallest distance wins.
  */
 export function matchName(name: string): MatchOutcome {
   const drugs = getAllDrugs();
   const lowered = name.trim().toLowerCase();
   const norm = normaliseName(name);
 
-  // 1. Exact (case-insensitive) against any raw term.
+  // 1. Exact (case-insensitive) against any curated term.
   for (const entry of drugs) {
-    for (const term of [entry.activeIngredient, ...entry.brands, ...entry.aliases]) {
+    for (const term of entryTerms(entry)) {
       if (term.trim().toLowerCase() === lowered && lowered.length > 0) {
         return { entry, method: "exact" };
       }
     }
   }
 
-  // 2. Normalised equality (strengths / punctuation removed).
+  // 2. Normalised equality (strengths / form words / punctuation removed).
   if (norm.length > 0) {
     for (const entry of drugs) {
-      for (const term of [entry.activeIngredient, ...entry.brands, ...entry.aliases]) {
+      for (const term of entryTerms(entry)) {
         if (normaliseName(term) === norm) {
           return { entry, method: "normalised" };
         }
@@ -68,7 +68,7 @@ export function matchName(name: string): MatchOutcome {
   let best: { entry: DrugEntry; dist: number } | null = null;
   if (norm.length >= 5 && /^[a-z ]+$/.test(norm)) {
     for (const entry of drugs) {
-      for (const term of [entry.activeIngredient, ...entry.brands, ...entry.aliases]) {
+      for (const term of entryTerms(entry)) {
         const t = normaliseName(term);
         if (!isFuzzyEligible(t)) continue;
         const d = levenshtein(norm, t);
